@@ -1,0 +1,80 @@
+{
+  "created_at_utc": "2026-11-15T15:13:56Z",
+  "name": "smoke50",
+  "config": {
+    "name": "smoke50",
+    "source": "yahoo_qlib",
+    "start": "2015-01-01",
+    "end": "2026-11-14",
+    "store_dir": "research/data/store",
+    "report_dir": "research/reports/phase1",
+    "universe": {
+      "name": "smoke50",
+      "symbols_file": "research/configs/universe_smoke50.txt",
+      "delisted_probes": [
+        "TWTR",
+        "ATVI",
+        "FRC"
+      ]
+    },
+    "download": {
+      "delay": 0.5,
+      "max_collector_count": 2
+    },
+    "cleaning": {
+      "min_price": 5.0,
+      "min_median_dollar_volume": 5000000.0,
+      "adv_window": 20,
+      "extreme_return_threshold": 0.5,
+      "split_ratio_tolerance": 0.03,
+      "halt_action": "flag"
+    }
+  },
+  "source": {
+    "name": "yahoo_qlib",
+    "includes_delisted": false,
+    "pit_membership": false,
+    "pit_fundamentals": false,
+    "notes": [
+      "상장폐지 종목 시세를 제공하지 않음 -> 생존편향",
+      "지수 편입 이력(PIT membership) 없음",
+      "수정주가는 조회 시점 기준으로 재계산되어 다운로드 시점마다 값이 달라짐",
+      "분할 미반영/오반영 가능성 있음(정제 단계에서 탐지만 하고 자동 수정하지 않음)",
+      "시세가 분할 소급 반영 상태로 제공됨 -> splits 컬럼으로 실제 체결가를 복원(스핀오프 조정 포함, splits 오류 시 복원도 틀림)",
+      "VWAP 미제공"
+    ],
+    "survivorship_bias": true
+  },
+  "universe": {
+    "name": "smoke50",
+    "kind": "static_current_list"
+  },
+  "flags": {
+    "survivorship_bias": true,
+    "pit_membership": false,
+    "includes_delisted": false
+  },
+  "data_hash": {
+    "raw": "666cb39603bfff45652b3ffa4e275eafd1e3fcdcc7a269b274bb323d3bf8328a",
+    "qlib": "492e3764774ac30d25c20eb520b51fa49cef0e83c86885a2a4b06df83f96bc22"
+  },
+  "git": {
+    "commit": "54355232463878d2eebb91fe0ee5fa7fa1f5976c",
+    "dirty": true
+  },
+  "versions": {
+    "python": "3.11.18",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "pyqlib": "0.9.8",
+    "pandas": "2.3.3",
+    "numpy": "2.2.6",
+    "yahooquery": "2.4.1",
+    "lightgbm": "4.7.0"
+  },
+  "counts": {
+    "requested": 50,
+    "normalized": 50,
+    "failed": [],
+    "trading_days": 2985
+  }
+}

@@ -1,0 +1,25 @@
+# Phase 1 소규모(50종목) end-to-end 설정
+name: smoke50
+source: yahoo_qlib            # research.data.sources 레지스트리 키
+start: "2015-01-01"
+end: "2026-11-14"             # exclusive (마지막 거래일 2026-11-13)
+store_dir: research/data/store
+report_dir: research/reports/phase1
+
+universe:
+  name: smoke50
+  symbols_file: research/configs/universe_smoke50.txt
+  # Yahoo 가 상장폐지 종목을 제공하는지 확인하기 위한 탐침. 유니버스에는 포함되지 않는다.
+  delisted_probes: [TWTR, ATVI, FRC]
+
+download:
+  delay: 0.5
+  max_collector_count: 2
+
+cleaning:
+  min_price: 5.0                      # 비수정 종가(USD)
+  min_median_dollar_volume: 5000000.0    # 직전 adv_window 거래일 중앙값(USD)
+  adv_window: 20
+  extreme_return_threshold: 0.5       # |수정 일수익률| 초과 시 이상 수익률로 기록
+  split_ratio_tolerance: 0.03
+  halt_action: flag                   # flag 만 하고 삭제하지 않음(qlib normalize 가 NaN 처리)

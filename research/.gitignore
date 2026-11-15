@@ -1,0 +1,14 @@
+# 원천/가공 데이터, 모델 산출물은 커밋 금지
+data/store/
+**/mlruns/
+*.pkl
+*.bin
+*.parquet
+*.feather
+*.h5
+# 비밀정보
+.env
+.env.*
+*.key
+*.pem
+secrets/

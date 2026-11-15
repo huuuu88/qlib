@@ -1,0 +1,314 @@
+{
+  "flags": {
+    "survivorship_bias": true,
+    "pit_membership": false,
+    "includes_delisted": false
+  },
+  "source": {
+    "name": "yahoo_qlib",
+    "includes_delisted": false,
+    "pit_membership": false,
+    "pit_fundamentals": false,
+    "notes": [
+      "상장폐지 종목 시세를 제공하지 않음 -> 생존편향",
+      "지수 편입 이력(PIT membership) 없음",
+      "수정주가는 조회 시점 기준으로 재계산되어 다운로드 시점마다 값이 달라짐",
+      "분할 미반영/오반영 가능성 있음(정제 단계에서 탐지만 하고 자동 수정하지 않음)",
+      "시세가 분할 소급 반영 상태로 제공됨 -> splits 컬럼으로 실제 체결가를 복원(스핀오프 조정 포함, splits 오류 시 복원도 틀림)",
+      "VWAP 미제공"
+    ],
+    "survivorship_bias": true
+  },
+  "universe": {
+    "name": "smoke50",
+    "kind": "static_current_list"
+  },
+  "data_hash": {
+    "raw": "666cb39603bfff45652b3ffa4e275eafd1e3fcdcc7a269b274bb323d3bf8328a",
+    "qlib": "492e3764774ac30d25c20eb520b51fa49cef0e83c86885a2a4b06df83f96bc22"
+  },
+  "period": {
+    "start": "2015-01-02",
+    "end": "2026-11-13",
+    "trading_days": 2985
+  },
+  "symbols": {
+    "requested": 50,
+    "obtained": 50,
+    "failed": []
+  },
+  "delisted_probes": [
+    {
+      "symbol": "TWTR",
+      "data_returned": false,
+      "rows": 0
+    },
+    {
+      "symbol": "ATVI",
+      "data_returned": false,
+      "rows": 0
+    },
+    {
+      "symbol": "FRC",
+      "data_returned": false,
+      "rows": 0
+    }
+  ],
+  "cleaning_stats": {
+    "duplicate_rows_removed": 0,
+    "off_calendar_rows_dropped": 0,
+    "rows": 143651,
+    "n_invalid_price": 0,
+    "n_halted": 1,
+    "n_extreme_return": 1,
+    "n_suspected_split": 0,
+    "tradable_fraction": 0.9904142679132063
+  },
+  "tables": {
+    "count_by_year": [
+      {
+        "year": 2015,
+        "min": 45,
+        "max": 46,
+        "mean": 45.5
+      },
+      {
+        "year": 2016,
+        "min": 46,
+        "max": 46,
+        "mean": 46.0
+      },
+      {
+        "year": 2017,
+        "min": 46,
+        "max": 46,
+        "mean": 46.0
+      },
+      {
+        "year": 2018,
+        "min": 46,
+        "max": 46,
+        "mean": 46.0
+      },
+      {
+        "year": 2019,
+        "min": 46,
+        "max": 47,
+        "mean": 46.6
+      },
+      {
+        "year": 2020,
+        "min": 47,
+        "max": 50,
+        "mean": 47.6
+      },
+      {
+        "year": 2021,
+        "min": 50,
+        "max": 50,
+        "mean": 50.0
+      },
+      {
+        "year": 2022,
+        "min": 50,
+        "max": 50,
+        "mean": 50.0
+      },
+      {
+        "year": 2023,
+        "min": 50,
+        "max": 50,
+        "mean": 50.0
+      },
+      {
+        "year": 2024,
+        "min": 50,
+        "max": 50,
+        "mean": 50.0
+      },
+      {
+        "year": 2025,
+        "min": 50,
+        "max": 50,
+        "mean": 50.0
+      },
+      {
+        "year": 2026,
+        "min": 50,
+        "max": 50,
+        "mean": 50.0
+      }
+    ],
+    "missing_by_field": [
+      {
+        "field": "open",
+        "missing_rate": 0.0
+      },
+      {
+        "field": "high",
+        "missing_rate": 0.0
+      },
+      {
+        "field": "low",
+        "missing_rate": 0.0
+      },
+      {
+        "field": "close",
+        "missing_rate": 0.0
+      },
+      {
+        "field": "adjclose",
+        "missing_rate": 0.0
+      },
+      {
+        "field": "volume",
+        "missing_rate": 0.0
+      }
+    ],
+    "missing_by_symbol_top10": [
+      {
+        "symbol": "AAPL",
+        "close_missing_rate": 0.0
+      },
+      {
+        "symbol": "ABBV",
+        "close_missing_rate": 0.0
+      },
+      {
+        "symbol": "ABNB",
+        "close_missing_rate": 0.0
+      },
+      {
+        "symbol": "ADBE",
+        "close_missing_rate": 0.0
+      },
+      {
+        "symbol": "AMD",
+        "close_missing_rate": 0.0
+      },
+      {
+        "symbol": "AMZN",
+        "close_missing_rate": 0.0
+      },
+      {
+        "symbol": "BA",
+        "close_missing_rate": 0.0
+      },
+      {
+        "symbol": "BAC",
+        "close_missing_rate": 0.0
+      },
+      {
+        "symbol": "BRK-B",
+        "close_missing_rate": 0.0
+      },
+      {
+        "symbol": "C",
+        "close_missing_rate": 0.0
+      }
+    ],
+    "started_late": [
+      {
+        "symbol": "ABNB",
+        "first": "2020-12-10T00:00:00.000",
+        "last": "2026-11-13T00:00:00.000",
+        "n_days": 1489
+      },
+      {
+        "symbol": "PLTR",
+        "first": "2020-09-30T00:00:00.000",
+        "last": "2026-11-13T00:00:00.000",
+        "n_days": 1539
+      },
+      {
+        "symbol": "PYPL",
+        "first": "2015-07-06T00:00:00.000",
+        "last": "2026-11-13T00:00:00.000",
+        "n_days": 2859
+      },
+      {
+        "symbol": "SNOW",
+        "first": "2020-09-16T00:00:00.000",
+        "last": "2026-11-13T00:00:00.000",
+        "n_days": 1549
+      },
+      {
+        "symbol": "UBER",
+        "first": "2019-05-10T00:00:00.000",
+        "last": "2026-11-13T00:00:00.000",
+        "n_days": 1890
+      }
+    ],
+    "ended_early": [],
+    "tradable_by_year": [
+      {
+        "year": 2015,
+        "tradable_fraction": 0.8995290424
+      },
+      {
+        "year": 2016,
+        "tradable_fraction": 0.9897342995
+      },
+      {
+        "year": 2017,
+        "tradable_fraction": 1.0
+      },
+      {
+        "year": 2018,
+        "tradable_fraction": 1.0
+      },
+      {
+        "year": 2019,
+        "tradable_fraction": 0.9982985963
+      },
+      {
+        "year": 2020,
+        "tradable_fraction": 0.9932757762
+      },
+      {
+        "year": 2021,
+        "tradable_fraction": 0.9996031746
+      },
+      {
+        "year": 2022,
+        "tradable_fraction": 1.0
+      },
+      {
+        "year": 2023,
+        "tradable_fraction": 1.0
+      },
+      {
+        "year": 2024,
+        "tradable_fraction": 1.0
+      },
+      {
+        "year": 2025,
+        "tradable_fraction": 1.0
+      },
+      {
+        "year": 2026,
+        "tradable_fraction": 1.0
+      }
+    ],
+    "events_invalid_price": [],
+    "events_halted": [
+      {
+        "symbol": "AMD",
+        "date": "2015-01-02T00:00:00.000",
+        "close": 2.6700000763,
+        "adjclose": 2.6700000763,
+        "adj_return": null
+      }
+    ],
+    "events_extreme_return": [
+      {
+        "symbol": "AMD",
+        "date": "2016-04-22T00:00:00.000",
+        "close": 3.9900000095,
+        "adjclose": 3.9900000095,
+        "adj_return": 0.5229008335
+      }
+    ],
+    "events_suspected_split": []
+  }
+}

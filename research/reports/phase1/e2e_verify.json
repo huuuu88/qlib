@@ -1,0 +1,13 @@
+{
+  "calendar_days": 2985,
+  "calendar_first": "2015-01-02",
+  "calendar_last": "2026-11-13",
+  "instruments": 50,
+  "feature_rows": 143651,
+  "compared_rows": 143650,
+  "max_rel_err_raw_close": 1.5464054226033142e-07,
+  "max_rel_err_dollar_volume": 1.5663400509957626e-07,
+  "max_abs_err_return": 1.6638486655118356e-07,
+  "tradable_mismatch_rows": 0,
+  "passed": true
+}

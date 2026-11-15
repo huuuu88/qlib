@@ -40,11 +40,22 @@ def run(config_path: str, skip_download: bool = False) -> dict:
     store = (REPO_ROOT / cfg["store_dir"] / cfg["name"]).resolve()
     report_dir = (REPO_ROOT / cfg["report_dir"]).resolve()
     raw_dir, probe_dir, norm_dir, qlib_dir = (store / d for d in ("raw", "raw_probes", "normalized", "qlib"))
+    meta_dir = store / "raw_meta"
     ucfg = cfg["universe"]
-    symbols = _read_symbols(REPO_ROOT / ucfg["symbols_file"])
     probe_syms = list(ucfg.get("delisted_probes", []))
+    benchmarks = list(cfg.get("benchmarks", []))
 
     source = get_source(cfg["source"], **cfg.get("download", {}))
+    if ucfg.get("symbols_from_source"):
+        # 유니버스 종목을 소스의 멤버십 이력에서 얻는다(편출 종목 포함). 메타 스냅샷은 raw_meta 에 보존.
+        if not skip_download:
+            source.snapshot_meta(meta_dir)
+        source.bind(meta_dir, cfg["start"])
+        universe_symbols = source.list_symbols(cfg["start"], cfg["end"], meta_dir)
+        source.sector_map(meta_dir).to_csv(store / "sectors.csv")
+    else:
+        universe_symbols = _read_symbols(REPO_ROOT / ucfg["symbols_file"])
+    symbols = sorted(set(universe_symbols) | set(benchmarks))
 
     # 1) 수집 (원본 스냅샷 보존)
     if skip_download:
@@ -75,16 +86,26 @@ def run(config_path: str, skip_download: bool = False) -> dict:
     # 3) qlib 변환 + PIT 유니버스
     n_norm = normalize_to_csv(cleaned, calendar, norm_dir)
     dump_bin(norm_dir, qlib_dir)
-    membership = build_membership(source, ucfg["name"], symbols, cleaned)
+    membership = build_membership(
+        source, ucfg["name"], universe_symbols, cleaned[cleaned["symbol"].isin(universe_symbols)]
+    )
     write_instruments(membership, qlib_dir)
 
     # 4) 해시/manifest
-    counts = {"requested": len(symbols), "normalized": n_norm, "failed": fetch.failed, "trading_days": len(calendar)}
-    manifest = build_manifest(cfg, source, membership, raw_dir, qlib_dir, counts)
+    counts = {
+        "requested": len(symbols),
+        "normalized": n_norm,
+        "universe_symbols": len(universe_symbols),
+        "universe_symbols_with_data": int(membership.table["symbol"].nunique()),
+        "benchmarks": benchmarks,
+        "failed": fetch.failed,
+        "trading_days": len(calendar),
+    }
+    manifest = build_manifest(cfg, source, membership, raw_dir, qlib_dir, counts, meta_dir)
     write_manifest(manifest, store, report_dir)
 
     # 5) 검증 + 리포트
-    verify = verify_qlib(qlib_dir, cleaned, ucfg["name"])
+    verify = verify_qlib(qlib_dir, cleaned, ucfg["name"], membership.table["symbol"].nunique())
     (report_dir / "e2e_verify.json").write_text(json.dumps(verify, indent=2), encoding="utf-8")
     q = compute_quality(cleaned, events, stats, fetch, probes, membership, calendar, manifest)
     report = write_report(q, report_dir)

@@ -1,0 +1,24 @@
+# S&P 500 근사 PIT 유니버스 (위키피디아 편입/편출 이력 + Yahoo 시세)
+name: sp500
+source: yahoo_wiki_sp500
+start: "2015-01-01"
+end: "2026-11-14"             # exclusive
+store_dir: research/data/store
+report_dir: research/reports/phase1_sp500
+
+universe:
+  name: sp500
+  symbols_from_source: true   # 멤버십 이력에 등장한 모든 종목(편출 포함)을 요청한다
+benchmarks: [SPY]             # 유니버스에는 넣지 않고 시세만 받는다(총수익 벤치마크)
+
+download:
+  delay: 0.3
+  max_collector_count: 1
+
+cleaning:
+  min_price: 5.0
+  min_median_dollar_volume: 5000000.0
+  adv_window: 20
+  extreme_return_threshold: 0.5
+  split_ratio_tolerance: 0.03
+  halt_action: flag

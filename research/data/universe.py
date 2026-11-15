@@ -17,6 +17,7 @@ from .sources.base import MEMBERSHIP_COLUMNS, DataSource
 
 KIND_PIT = "point_in_time"
 KIND_STATIC = "static_current_list"
+KIND_APPROX = "approximate_pit"  # 비공식 이력으로 복원한 구간. PIT 로 인정하지 않는다
 
 
 @dataclass
@@ -24,6 +25,7 @@ class Membership:
     name: str
     table: pd.DataFrame  # MEMBERSHIP_COLUMNS
     kind: str
+    unclipped: pd.DataFrame = None  # 시세 유무와 무관한 원래 멤버십(커버리지 계산용)
 
     @property
     def survivorship_bias(self) -> bool:
@@ -48,7 +50,7 @@ def _clip_to_data(table: pd.DataFrame, prices: pd.DataFrame) -> pd.DataFrame:
 def build_membership(source: DataSource, name: str, symbols: Sequence[str], prices: pd.DataFrame) -> Membership:
     try:
         table = source.fetch_membership(name, symbols, prices)
-        kind = KIND_PIT
+        kind = KIND_PIT if source.capabilities.pit_membership else KIND_APPROX
     except NotImplementedError:
         # PIT 불가: 주어진 목록을 전 기간에 적용(= 소급 적용). 반드시 플래그가 붙는다.
         table = pd.DataFrame(
@@ -58,7 +60,7 @@ def build_membership(source: DataSource, name: str, symbols: Sequence[str], pric
     table = table[MEMBERSHIP_COLUMNS].copy()
     table["start"] = pd.to_datetime(table["start"])
     table["end"] = pd.to_datetime(table["end"])
-    return Membership(name=name, table=_clip_to_data(table, prices), kind=kind)
+    return Membership(name=name, table=_clip_to_data(table, prices), kind=kind, unclipped=table)
 
 
 def write_instruments(membership: Membership, qlib_dir) -> Path:

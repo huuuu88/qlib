@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 
-def verify_qlib(qlib_dir, cleaned: pd.DataFrame, universe: str) -> dict:
+def verify_qlib(qlib_dir, cleaned: pd.DataFrame, universe: str, expected_instruments: int = None) -> dict:
     import qlib
     from qlib.data import D
     from qlib.utils import code_to_fname
@@ -49,7 +49,8 @@ def verify_qlib(qlib_dir, cleaned: pd.DataFrame, universe: str) -> dict:
         "tradable_mismatch_rows": trad_mismatch,
     }
     res["passed"] = bool(
-        res["instruments"] == src.dropna(subset=["close"])["symbol"].nunique()
+        res["instruments"]
+        == (expected_instruments if expected_instruments is not None else src.dropna(subset=["close"])["symbol"].nunique())
         and res["compared_rows"] > 0
         and raw_err < 1e-3
         and dv_err < 1e-3

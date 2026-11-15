@@ -86,7 +86,7 @@ class YahooQlibSource(DataSource):
             # upstream save_instrument 은 기존 파일에 append 하므로 중복 방지를 위해 빈 폴더를 요구
             raise FileExistsError(f"{raw_dir} already has csv files; use a fresh snapshot dir or --skip-download")
         raw_dir.mkdir(parents=True, exist_ok=True)
-        cls = make_collector_class(symbols)
+        cls = self._collector_class(symbols)
         cls(
             save_dir=raw_dir,
             start=start,
@@ -97,6 +97,9 @@ class YahooQlibSource(DataSource):
             delay=self.delay,
         ).collector_data()
         return self.load_raw(symbols, raw_dir)
+
+    def _collector_class(self, symbols):
+        return make_collector_class(symbols)
 
     @staticmethod
     def load_raw(symbols: Sequence[str], raw_dir) -> FetchResult:

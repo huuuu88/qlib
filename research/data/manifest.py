@@ -51,7 +51,7 @@ def _versions() -> dict:
     return out
 
 
-def build_manifest(config: dict, source, membership, raw_dir, qlib_dir, counts: dict) -> dict:
+def build_manifest(config: dict, source, membership, raw_dir, qlib_dir, counts: dict, meta_dir=None) -> dict:
     return {
         "created_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "name": config["name"],
@@ -63,7 +63,11 @@ def build_manifest(config: dict, source, membership, raw_dir, qlib_dir, counts: 
             "pit_membership": membership.kind == "point_in_time",
             "includes_delisted": source.capabilities.includes_delisted,
         },
-        "data_hash": {"raw": hash_dir(raw_dir), "qlib": hash_dir(qlib_dir)},
+        "data_hash": {
+            "raw": hash_dir(raw_dir),
+            "qlib": hash_dir(qlib_dir),
+            **({"meta": hash_dir(meta_dir)} if meta_dir is not None and Path(meta_dir).exists() else {}),
+        },
         "git": {"commit": _git("rev-parse", "HEAD"), "dirty": bool(_git("status", "--porcelain"))},
         "versions": _versions(),
         "counts": counts,

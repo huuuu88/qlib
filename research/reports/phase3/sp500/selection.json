@@ -73,10 +73,10 @@
     }
   },
   "trials": {
-    "total": 22,
+    "total": 26,
     "by_kind": {
       "model": 8,
-      "portfolio": 4,
+      "portfolio": 8,
       "factor": 10
     }
   },

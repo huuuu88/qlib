@@ -60,6 +60,6 @@ t-stat 은 5일 라벨의 겹침을 감안해 유효 표본을 1/6 로 줄여 �
 
 ## 시도 횟수
 
-- 총 시도: **22** (model 8, portfolio 4, factor 10)
+- 총 시도: **26** (model 8, portfolio 8, factor 10)
 - 기록 파일: `research/reports/trials.jsonl` (같은 설정의 재실행은 새 시도로 세지 않는다)
 - 과적합 보정 지표(Deflated Sharpe)는 포트폴리오 수익률이 필요하므로 최종 리포트에서 계산한다.

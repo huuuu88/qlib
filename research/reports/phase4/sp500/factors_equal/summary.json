@@ -1,0 +1,1138 @@
+{
+  "data": "sp500",
+  "signal": "factors_equal",
+  "flags": {
+    "survivorship_bias": true,
+    "pit_membership": false,
+    "includes_delisted": false
+  },
+  "data_hash": {
+    "raw": "eb0da632cf9d46611790b016a35272dd08cac81c25793306cfad913dd4013187",
+    "qlib": "8d3d80297f7615e1e900267d233b5966d752971c1c7781dc2b79aeaefce04f5b",
+    "meta": "cfb5f592168edb95d2ede952fc8319bd48877a4cac4402167d2ba4854976243b"
+  },
+  "git_commit": "2e9714101b295ef6ae9c79954c9750d2c58e0d8d",
+  "period": [
+    "2021-01-25",
+    "2026-11-12"
+  ],
+  "rebalance_every_days": 5,
+  "base_aum": 100000000.0,
+  "cost_model": {
+    "commission_bps": 0.5,
+    "half_spread_bps": 1.5,
+    "slippage_bps": 1.0,
+    "impact_coef": 0.1,
+    "borrow_bps_per_year": 50.0,
+    "max_participation": 0.05
+  },
+  "opt_long_only": {
+    "mode": "long_only",
+    "risk_aversion": 10.0,
+    "alpha_per_z": 0.002,
+    "horizon": 5,
+    "max_weight": 0.03,
+    "max_sector_weight": 0.25,
+    "max_turnover": 0.5,
+    "trade_penalty_bps": 3.0,
+    "sector_neutral": true,
+    "beta_neutral": true,
+    "gross_leverage": 2.0,
+    "cov_lookback": 252,
+    "min_history": 126
+  },
+  "opt_ls_neutral": {
+    "mode": "long_short",
+    "risk_aversion": 10.0,
+    "alpha_per_z": 0.002,
+    "horizon": 5,
+    "max_weight": 0.03,
+    "max_sector_weight": 0.25,
+    "max_turnover": 1.0,
+    "trade_penalty_bps": 3.0,
+    "sector_neutral": true,
+    "beta_neutral": true,
+    "gross_leverage": 2.0,
+    "cov_lookback": 252,
+    "min_history": 126
+  },
+  "sector_data": "current GICS (not point-in-time)",
+  "optimizer_events": [],
+  "ppo_crosscheck": {
+    "n_dates": 8,
+    "max_abs_weight_diff": 0.0001541310008956083,
+    "mean_abs_weight_diff": 4.1659582288399534e-05
+  },
+  "ls_quintile_zero_cost_sharpe_per_day": -0.01904333542412344,
+  "strategies": {
+    "topk50_ew": {
+      "gross": {
+        "days": 1459,
+        "total_return": 0.7351281407392507,
+        "cagr": 0.0998604746795122,
+        "ann_vol": 0.14109468684813004,
+        "sharpe": 0.7453997237773059,
+        "sortino": 0.9907665379670838,
+        "max_drawdown": -0.2037658552054964,
+        "hit_rate": 0.5400959561343386,
+        "skew": -0.4198900084375207,
+        "kurtosis": 8.138147929952705
+      },
+      "net": {
+        "days": 1459,
+        "total_return": 0.579300259363144,
+        "cagr": 0.08212898764344012,
+        "ann_vol": 0.14111543846127225,
+        "sharpe": 0.6301009441758889,
+        "sortino": 0.8372653404493205,
+        "max_drawdown": -0.213828697944627,
+        "hit_rate": 0.5380397532556546,
+        "skew": -0.4200354148984025,
+        "kurtosis": 8.138593442197655
+      },
+      "turnover": {
+        "rebalances": 291,
+        "avg_turnover_per_rebalance": 0.659054957161835,
+        "annual_turnover": 33.12530371390794,
+        "avg_clipped_frac": 0.0049315882908732445,
+        "max_clipped_frac": 0.035262889533441366,
+        "annual_cost": 0.016250150441489173,
+        "annual_cost_breakdown": {
+          "commission": 0.0016562651856953973,
+          "spread": 0.004968795557086192,
+          "slippage": 0.0033125303713907946,
+          "impact": 0.00631255932731679,
+          "borrow": 0.0
+        },
+        "avg_participation": 0.019095823257072257,
+        "max_participation": 0.05000000000000002,
+        "max_participation_wanted": 0.27505346028799355,
+        "avg_n_long": 50.41809458533242,
+        "avg_n_short": 0.0
+      },
+      "sensitivity": {
+        "aum=1e+07|cost_x0.0": {
+          "net_sharpe": 0.7482181482620901,
+          "net_cagr": 0.10029748655855042,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.002105502996984559,
+          "max_participation_wanted": 0.027869473296418226
+        },
+        "aum=1e+07|cost_x0.5": {
+          "net_sharpe": 0.7054489260546606,
+          "net_cagr": 0.09368282383100124,
+          "annual_cost": 0.0060294638807434865,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.002068992260551616,
+          "max_participation_wanted": 0.02775795017767754
+        },
+        "aum=1e+07|cost_x1.0": {
+          "net_sharpe": 0.6627851893426938,
+          "net_cagr": 0.08712600905828705,
+          "annual_cost": 0.012041532148235258,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.002033383674799829,
+          "max_participation_wanted": 0.02764689615607963
+        },
+        "aum=1e+07|cost_x2.0": {
+          "net_sharpe": 0.5777810139042383,
+          "net_cagr": 0.074182229326067,
+          "annual_cost": 0.024014849068574075,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.0019647641200986636,
+          "max_participation_wanted": 0.027426186903323845
+        },
+        "aum=1e+07|cost_x4.0": {
+          "net_sharpe": 0.4091132251899009,
+          "net_cagr": 0.0489494986653618,
+          "annual_cost": 0.04776731848691899,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.001837206862149691,
+          "max_participation_wanted": 0.026990304645100306
+        },
+        "aum=1e+08|cost_x0.0": {
+          "net_sharpe": 0.7464651729328244,
+          "net_cagr": 0.10002546696382142,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.0055783891115923885,
+          "avg_participation": 0.019961445695547895,
+          "max_participation_wanted": 0.27813671603285955
+        },
+        "aum=1e+08|cost_x0.5": {
+          "net_sharpe": 0.68805217977604,
+          "net_cagr": 0.09100387573368729,
+          "annual_cost": 0.008157368687027664,
+          "avg_clipped": 0.005244019198955358,
+          "avg_participation": 0.019521141256197836,
+          "max_participation_wanted": 0.2765902232010596
+        },
+        "aum=1e+08|cost_x1.0": {
+          "net_sharpe": 0.6301009441758889,
+          "net_cagr": 0.08212898764344012,
+          "annual_cost": 0.016250150441489173,
+          "avg_clipped": 0.0049315882908732445,
+          "avg_participation": 0.019095823257072257,
+          "max_participation_wanted": 0.27505346028799355
+        },
+        "aum=1e+08|cost_x2.0": {
+          "net_sharpe": 0.5157119735912664,
+          "net_cagr": 0.06482407457216754,
+          "annual_cost": 0.0322464505785799,
+          "avg_clipped": 0.00437325156236894,
+          "avg_participation": 0.018285277399824836,
+          "max_participation_wanted": 0.27200883389010755
+        },
+        "aum=1e+08|cost_x4.0": {
+          "net_sharpe": 0.2928666958888835,
+          "net_cagr": 0.031881716559106765,
+          "annual_cost": 0.06351850151702855,
+          "avg_clipped": 0.003478941200085176,
+          "avg_participation": 0.0168107685042975,
+          "max_participation_wanted": 0.2660321541755253
+        },
+        "aum=1e+09|cost_x0.0": {
+          "net_sharpe": 0.710487224152838,
+          "net_cagr": 0.0866648327654429,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.5333239431389379,
+          "avg_participation": 0.04639465074855814,
+          "max_participation_wanted": 2.1572636141515185
+        },
+        "aum=1e+09|cost_x0.5": {
+          "net_sharpe": 0.6694983432691255,
+          "net_cagr": 0.08103417403141044,
+          "annual_cost": 0.005177490746815608,
+          "avg_clipped": 0.5282915256337349,
+          "avg_participation": 0.04635814595845936,
+          "max_participation_wanted": 2.108479607453934
+        },
+        "aum=1e+09|cost_x1.0": {
+          "net_sharpe": 0.6279547796117858,
+          "net_cagr": 0.0753432404953247,
+          "annual_cost": 0.010440769169410018,
+          "avg_clipped": 0.5231894811575708,
+          "avg_participation": 0.04632010137116223,
+          "max_participation_wanted": 2.060203437968298
+        },
+        "aum=1e+09|cost_x2.0": {
+          "net_sharpe": 0.5422952183332782,
+          "net_cagr": 0.06366690226204197,
+          "annual_cost": 0.021234667920639338,
+          "avg_clipped": 0.5126350170586623,
+          "avg_participation": 0.04624436703529643,
+          "max_participation_wanted": 1.9641452719876826
+        },
+        "aum=1e+09|cost_x4.0": {
+          "net_sharpe": 0.3648569651991203,
+          "net_cagr": 0.03971623510462119,
+          "annual_cost": 0.04393131466966944,
+          "avg_clipped": 0.49048549513573225,
+          "avg_participation": 0.04607188676515505,
+          "max_participation_wanted": 1.7781846394311693
+        },
+        "aum=1e+10|cost_x0.0": {
+          "net_sharpe": 0.5313778856942971,
+          "net_cagr": 0.03271051052477625,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.9277009897320073,
+          "avg_participation": 0.04897394532711355,
+          "max_participation_wanted": 21.41019954156472
+        },
+        "aum=1e+10|cost_x0.5": {
+          "net_sharpe": 0.5163014141093429,
+          "net_cagr": 0.03174429764513187,
+          "annual_cost": 0.0009905456247904377,
+          "avg_clipped": 0.9274966965436636,
+          "avg_participation": 0.04897332805722214,
+          "max_participation_wanted": 21.401725027491345
+        },
+        "aum=1e+10|cost_x1.0": {
+          "net_sharpe": 0.501178043680204,
+          "net_cagr": 0.030773687601054922,
+          "annual_cost": 0.001986124704616552,
+          "avg_clipped": 0.9272899481825182,
+          "avg_participation": 0.04897281709077111,
+          "max_participation_wanted": 21.393250827191785
+        },
+        "aum=1e+10|cost_x2.0": {
+          "net_sharpe": 0.47078821948373933,
+          "net_cagr": 0.02881897013636947,
+          "annual_cost": 0.003992638411470126,
+          "avg_clipped": 0.9268703997396216,
+          "avg_participation": 0.04897048771909644,
+          "max_participation_wanted": 21.37630336751159
+        },
+        "aum=1e+10|cost_x4.0": {
+          "net_sharpe": 0.409530281946004,
+          "net_cagr": 0.02486052471997402,
+          "annual_cost": 0.008068515562727235,
+          "avg_clipped": 0.9260124503990278,
+          "avg_participation": 0.048965834380325514,
+          "max_participation_wanted": 21.342412208972465
+        }
+      }
+    },
+    "ls_quintile": {
+      "gross": {
+        "days": 1459,
+        "total_return": -0.3201164872591763,
+        "cagr": -0.06446957955398669,
+        "ann_vol": 0.1717240638555625,
+        "sharpe": -0.30204719391827467,
+        "sortino": -0.43402403086005675,
+        "max_drawdown": -0.4288006885209743,
+        "hit_rate": 0.4859492803289925,
+        "skew": -0.2134215917120662,
+        "kurtosis": 4.920896667672838
+      },
+      "net": {
+        "days": 1459,
+        "total_return": -0.4201769268201494,
+        "cagr": -0.08984334067785082,
+        "ann_vol": 0.1717196794622561,
+        "sharpe": -0.46212505514299335,
+        "sortino": -0.6636819298965045,
+        "max_drawdown": -0.4997548893059377,
+        "hit_rate": 0.47909527073337904,
+        "skew": -0.2143076726298876,
+        "kurtosis": 4.927926906857916
+      },
+      "turnover": {
+        "rebalances": 291,
+        "avg_turnover_per_rebalance": 1.0833056563399024,
+        "annual_turnover": 54.448917334282186,
+        "avg_clipped_frac": 0.00041497073060844963,
+        "max_clipped_frac": 0.007671194166586237,
+        "annual_cost": 0.027491198919670376,
+        "annual_cost_breakdown": {
+          "commission": 0.0027224458667141098,
+          "spread": 0.008167337600142328,
+          "slippage": 0.0054448917334282195,
+          "impact": 0.006153938906959425,
+          "borrow": 0.0050025848124263
+        },
+        "avg_participation": 0.004517243723459865,
+        "max_participation": 0.05000000000000002,
+        "max_participation_wanted": 0.1445699935903819,
+        "avg_n_long": 96.10692254969157,
+        "avg_n_short": 96.09664153529815
+      },
+      "sensitivity": {
+        "aum=1e+07|cost_x0.0": {
+          "net_sharpe": -0.3023035779925032,
+          "net_cagr": -0.06452466829960146,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.0004899135014871371,
+          "max_participation_wanted": 0.015375493645291545
+        },
+        "aum=1e+07|cost_x0.5": {
+          "net_sharpe": -0.37026720946366387,
+          "net_cagr": -0.07537936694252112,
+          "annual_cost": 0.011670281400875619,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.0004765156127531535,
+          "max_participation_wanted": 0.01487088767882509
+        },
+        "aum=1e+07|cost_x1.0": {
+          "net_sharpe": -0.43804276045568535,
+          "net_cagr": -0.08608225923154533,
+          "annual_cost": 0.02331034751042484,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.00046365138451508436,
+          "max_participation_wanted": 0.01451872431206669
+        },
+        "aum=1e+07|cost_x2.0": {
+          "net_sharpe": -0.5730157132095658,
+          "net_cagr": -0.10704559167546301,
+          "annual_cost": 0.046503894506836674,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.00043942148247944746,
+          "max_participation_wanted": 0.014115827428871831
+        },
+        "aum=1e+07|cost_x4.0": {
+          "net_sharpe": -0.8405484020096066,
+          "net_cagr": -0.1472869925843726,
+          "annual_cost": 0.09257094333259898,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.00039631589020726397,
+          "max_participation_wanted": 0.013344239246233217
+        },
+        "aum=1e+08|cost_x0.0": {
+          "net_sharpe": -0.30193750566401667,
+          "net_cagr": -0.06444961657167658,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.00044752986097478225,
+          "avg_participation": 0.0048240448217939024,
+          "max_participation_wanted": 0.15407108689352003
+        },
+        "aum=1e+08|cost_x0.5": {
+          "net_sharpe": -0.38237135044099696,
+          "net_cagr": -0.07728413975083548,
+          "annual_cost": 0.013801732732948633,
+          "avg_clipped": 0.0004314318247992893,
+          "avg_participation": 0.004666615662367262,
+          "max_participation_wanted": 0.14797888010777593
+        },
+        "aum=1e+08|cost_x1.0": {
+          "net_sharpe": -0.46212505514299335,
+          "net_cagr": -0.08984334067785082,
+          "annual_cost": 0.027491198919670376,
+          "avg_clipped": 0.00041497073060844963,
+          "avg_participation": 0.004517243723459865,
+          "max_participation_wanted": 0.1445699935903819
+        },
+        "aum=1e+08|cost_x2.0": {
+          "net_sharpe": -0.6196567016308673,
+          "net_cagr": -0.11418098416439415,
+          "annual_cost": 0.05455317130970807,
+          "avg_clipped": 0.00038469794263800404,
+          "avg_participation": 0.004240068327234327,
+          "max_participation_wanted": 0.13974104222291336
+        },
+        "aum=1e+08|cost_x4.0": {
+          "net_sharpe": -0.9269090770363654,
+          "net_cagr": -0.15996407774980337,
+          "annual_cost": 0.10753281069446292,
+          "avg_clipped": 0.0003378004869499238,
+          "avg_participation": 0.0037596125489730596,
+          "max_participation_wanted": 0.130603791604037
+        },
+        "aum=1e+09|cost_x0.0": {
+          "net_sharpe": -0.3097591930291088,
+          "net_cagr": -0.06509657068987074,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.10591437901203486,
+          "avg_participation": 0.029694303802028203,
+          "max_participation_wanted": 1.5514754476315105
+        },
+        "aum=1e+09|cost_x0.5": {
+          "net_sharpe": -0.41117192748115994,
+          "net_cagr": -0.08116292718489704,
+          "annual_cost": 0.01738045082711879,
+          "avg_clipped": 0.09915963328521013,
+          "avg_participation": 0.02903012668330881,
+          "max_participation_wanted": 1.4767494489779602
+        },
+        "aum=1e+09|cost_x1.0": {
+          "net_sharpe": -0.5117387741065289,
+          "net_cagr": -0.09685072054766408,
+          "annual_cost": 0.03471531278615619,
+          "avg_clipped": 0.09289981465770092,
+          "avg_participation": 0.028359539245545552,
+          "max_participation_wanted": 1.4476404710509112
+        },
+        "aum=1e+09|cost_x2.0": {
+          "net_sharpe": -0.7121399161173596,
+          "net_cagr": -0.12737390714179397,
+          "annual_cost": 0.06913163018541375,
+          "avg_clipped": 0.08185029519744401,
+          "avg_participation": 0.02700810273427873,
+          "max_participation_wanted": 1.3908673267425455
+        },
+        "aum=1e+09|cost_x4.0": {
+          "net_sharpe": -1.10461228643788,
+          "net_cagr": -0.18448259600569417,
+          "annual_cost": 0.1364006345489465,
+          "avg_clipped": 0.0646336529735577,
+          "avg_participation": 0.02435325769736244,
+          "max_participation_wanted": 1.2831086873051785
+        },
+        "aum=1e+10|cost_x0.0": {
+          "net_sharpe": -0.29083467190157514,
+          "net_cagr": -0.05673341306701285,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.7008461487102681,
+          "avg_participation": 0.04318899398576068,
+          "max_participation_wanted": 15.850993587594763
+        },
+        "aum=1e+10|cost_x0.5": {
+          "net_sharpe": -0.35028528182431967,
+          "net_cagr": -0.06562502823804317,
+          "annual_cost": 0.00943340249526358,
+          "avg_clipped": 0.6951851990158034,
+          "avg_participation": 0.043136475053845914,
+          "max_participation_wanted": 15.500799595472813
+        },
+        "aum=1e+10|cost_x1.0": {
+          "net_sharpe": -0.4110124545672522,
+          "net_cagr": -0.0746419584241409,
+          "annual_cost": 0.019066547585008625,
+          "avg_clipped": 0.6893391425378959,
+          "avg_participation": 0.04308790402230421,
+          "max_participation_wanted": 15.237475838680838
+        },
+        "aum=1e+10|cost_x2.0": {
+          "net_sharpe": -0.5378709523691084,
+          "net_cagr": -0.09325101198705332,
+          "annual_cost": 0.03896402615115415,
+          "avg_clipped": 0.6770949280009334,
+          "avg_participation": 0.04298029267456358,
+          "max_participation_wanted": 14.962630635232557
+        },
+        "aum=1e+10|cost_x4.0": {
+          "net_sharpe": -0.8037880867161968,
+          "net_cagr": -0.13120552512576378,
+          "annual_cost": 0.08139319909125504,
+          "avg_clipped": 0.6505476176523404,
+          "avg_participation": 0.04271838275544178,
+          "max_participation_wanted": 14.42128911958675
+        }
+      }
+    },
+    "opt_long_only": {
+      "gross": {
+        "days": 1459,
+        "total_return": 0.836672279280321,
+        "cagr": 0.11071803925397705,
+        "ann_vol": 0.12684313754151005,
+        "sharpe": 0.8915099488999808,
+        "sortino": 1.2154715541203756,
+        "max_drawdown": -0.1712012452644519,
+        "hit_rate": 0.5442083618917066,
+        "skew": -0.3672021445909414,
+        "kurtosis": 8.88173527264343
+      },
+      "net": {
+        "days": 1459,
+        "total_return": 0.7446065940522899,
+        "cagr": 0.10089587809220801,
+        "ann_vol": 0.12682857503604764,
+        "sharpe": 0.8215365827459646,
+        "sortino": 1.1200258186439658,
+        "max_drawdown": -0.1746282579804136,
+        "hit_rate": 0.5414667580534612,
+        "skew": -0.36518531119135234,
+        "kurtosis": 8.878491052066401
+      },
+      "turnover": {
+        "rebalances": 291,
+        "avg_turnover_per_rebalance": 0.3619323922796187,
+        "annual_turnover": 18.19138189900548,
+        "avg_clipped_frac": 0.020090698953365443,
+        "max_clipped_frac": 0.11627055467569736,
+        "annual_cost": 0.008881541922464205,
+        "annual_cost_breakdown": {
+          "commission": 0.0009095690949502743,
+          "spread": 0.0027287072848508225,
+          "slippage": 0.0018191381899005485,
+          "impact": 0.0034241273527625604,
+          "borrow": 0.0
+        },
+        "avg_participation": 0.020751029532412358,
+        "max_participation": 0.05000000000000002,
+        "max_participation_wanted": 0.3132258986587402,
+        "avg_n_long": 41.01370801919123,
+        "avg_n_short": 0.0
+      },
+      "sensitivity": {
+        "aum=1e+07|cost_x0.0": {
+          "net_sharpe": 0.8908040450203977,
+          "net_cagr": 0.1106612441839625,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.002415721225980069,
+          "max_participation_wanted": 0.035378041714279156
+        },
+        "aum=1e+07|cost_x0.5": {
+          "net_sharpe": 0.8645536320108288,
+          "net_cagr": 0.10696338520171245,
+          "annual_cost": 0.0033348546806280144,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.002392523485106187,
+          "max_participation_wanted": 0.034855306618378594
+        },
+        "aum=1e+07|cost_x1.0": {
+          "net_sharpe": 0.8383329460805327,
+          "net_cagr": 0.10328360700061356,
+          "annual_cost": 0.006664238561117192,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.002369641946871473,
+          "max_participation_wanted": 0.03434090788507575
+        },
+        "aum=1e+07|cost_x2.0": {
+          "net_sharpe": 0.7859829863816594,
+          "net_cagr": 0.09597764021962263,
+          "annual_cost": 0.013306834869193733,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.002324806201767495,
+          "max_participation_wanted": 0.03333653610357106
+        },
+        "aum=1e+07|cost_x4.0": {
+          "net_sharpe": 0.6816642039781596,
+          "net_cagr": 0.0815756259225886,
+          "annual_cost": 0.026528982639262857,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.002238701013175003,
+          "max_participation_wanted": 0.0330569067913556
+        },
+        "aum=1e+08|cost_x0.0": {
+          "net_sharpe": 0.890742601182428,
+          "net_cagr": 0.11060823257331576,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.021667789433516403,
+          "avg_participation": 0.02115933749537566,
+          "max_participation_wanted": 0.3147560603996158
+        },
+        "aum=1e+08|cost_x0.5": {
+          "net_sharpe": 0.8561417575282663,
+          "net_cagr": 0.10573986563891791,
+          "annual_cost": 0.004447735808081559,
+          "avg_clipped": 0.02085598180024309,
+          "avg_participation": 0.020955226600551546,
+          "max_participation_wanted": 0.31398997959356173
+        },
+        "aum=1e+08|cost_x1.0": {
+          "net_sharpe": 0.8215365827459646,
+          "net_cagr": 0.10089587809220801,
+          "annual_cost": 0.008881541922464205,
+          "avg_clipped": 0.020090698953365443,
+          "avg_participation": 0.020751029532412358,
+          "max_participation_wanted": 0.3132258986587402
+        },
+        "aum=1e+08|cost_x2.0": {
+          "net_sharpe": 0.7522360708601324,
+          "net_cagr": 0.09126454951477303,
+          "annual_cost": 0.01770602507576809,
+          "avg_clipped": 0.018691835777226693,
+          "avg_participation": 0.020342725524736018,
+          "max_participation_wanted": 0.3117037109816787
+        },
+        "aum=1e+08|cost_x4.0": {
+          "net_sharpe": 0.614826808203698,
+          "net_cagr": 0.07242997826527597,
+          "annual_cost": 0.03517486909393851,
+          "avg_clipped": 0.01629693030974787,
+          "avg_participation": 0.019543437919648018,
+          "max_participation_wanted": 0.30868305561781784
+        },
+        "aum=1e+09|cost_x0.0": {
+          "net_sharpe": 0.805923214104283,
+          "net_cagr": 0.09232202209639051,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.5979747482028815,
+          "avg_participation": 0.04431398055955145,
+          "max_participation_wanted": 3.085334986900034
+        },
+        "aum=1e+09|cost_x0.5": {
+          "net_sharpe": 0.7772073719377098,
+          "net_cagr": 0.08870726046656552,
+          "annual_cost": 0.003403179962468134,
+          "avg_clipped": 0.5951322306296702,
+          "avg_participation": 0.04427311503962182,
+          "max_participation_wanted": 3.0796740604597694
+        },
+        "aum=1e+09|cost_x1.0": {
+          "net_sharpe": 0.7481886912269539,
+          "net_cagr": 0.08505825835203007,
+          "annual_cost": 0.006832688724337642,
+          "avg_clipped": 0.5922484459014236,
+          "avg_participation": 0.04423642573358548,
+          "max_participation_wanted": 3.0740184256113623
+        },
+        "aum=1e+09|cost_x2.0": {
+          "net_sharpe": 0.6892624623940828,
+          "net_cagr": 0.07766530343367739,
+          "annual_cost": 0.01377226800840715,
+          "avg_clipped": 0.5863794417036696,
+          "avg_participation": 0.04415245791375873,
+          "max_participation_wanted": 3.062722754289963
+        },
+        "aum=1e+09|cost_x4.0": {
+          "net_sharpe": 0.5691456709210692,
+          "net_cagr": 0.06264180874256065,
+          "annual_cost": 0.0279670394046421,
+          "avg_clipped": 0.574320146664378,
+          "avg_participation": 0.04396363359059359,
+          "max_participation_wanted": 3.0401868290353025
+        },
+        "aum=1e+10|cost_x0.0": {
+          "net_sharpe": 0.6109502482540026,
+          "net_cagr": 0.03594864640261064,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.9335933975411753,
+          "avg_participation": 0.048601492114433015,
+          "max_participation_wanted": 28.393198681722996
+        },
+        "aum=1e+10|cost_x0.5": {
+          "net_sharpe": 0.5970120600200027,
+          "net_cagr": 0.0351009658219994,
+          "annual_cost": 0.0008647514326880886,
+          "avg_clipped": 0.9334385521427744,
+          "avg_participation": 0.04859860445042097,
+          "max_participation_wanted": 28.385406837375154
+        },
+        "aum=1e+10|cost_x1.0": {
+          "net_sharpe": 0.5830442057713147,
+          "net_cagr": 0.03425072411270769,
+          "annual_cost": 0.001732801587167735,
+          "avg_clipped": 0.9332834783711925,
+          "avg_participation": 0.04859519034499291,
+          "max_participation_wanted": 28.377615352886572
+        },
+        "aum=1e+10|cost_x2.0": {
+          "net_sharpe": 0.5550954375756167,
+          "net_cagr": 0.03254699726580301,
+          "annual_cost": 0.00347876079459991,
+          "avg_clipped": 0.9329727936311101,
+          "avg_participation": 0.04858787062926489,
+          "max_participation_wanted": 28.362033462978232
+        },
+        "aum=1e+10|cost_x4.0": {
+          "net_sharpe": 0.4987023094760197,
+          "net_cagr": 0.02909888843208419,
+          "annual_cost": 0.007011262503594943,
+          "avg_clipped": 0.932337497596939,
+          "avg_participation": 0.0485765192693212,
+          "max_participation_wanted": 28.33087399587338
+        }
+      }
+    },
+    "opt_ls_neutral": {
+      "gross": {
+        "days": 1459,
+        "total_return": 0.13768387354106149,
+        "cagr": 0.022530119717965702,
+        "ann_vol": 0.09274409568360567,
+        "sharpe": 0.28663563626452976,
+        "sortino": 0.416105277068685,
+        "max_drawdown": -0.11158117266519385,
+        "hit_rate": 0.5140507196710076,
+        "skew": -0.30443583333650537,
+        "kurtosis": 4.386127604412908
+      },
+      "net": {
+        "days": 1459,
+        "total_return": -0.024811072773683773,
+        "cagr": -0.004330051174124994,
+        "ann_vol": 0.09280517017931507,
+        "sharpe": -0.0003301016512053832,
+        "sortino": -0.00047833699671054883,
+        "max_drawdown": -0.185635633888238,
+        "hit_rate": 0.5071967100753941,
+        "skew": -0.30080835644014503,
+        "kurtosis": 4.395734482751346
+      },
+      "turnover": {
+        "rebalances": 291,
+        "avg_turnover_per_rebalance": 0.9036885813446155,
+        "annual_turnover": 45.4210356731757,
+        "avg_clipped_frac": 0.005860267081535413,
+        "max_clipped_frac": 0.039794285589759504,
+        "annual_cost": 0.02661423224854799,
+        "annual_cost_breakdown": {
+          "commission": 0.0022710517836587855,
+          "spread": 0.006813155350976357,
+          "slippage": 0.004542103567317571,
+          "impact": 0.007988954774946575,
+          "borrow": 0.004998966771648702
+        },
+        "avg_participation": 0.011591785522267183,
+        "max_participation": 0.05000000000000002,
+        "max_participation_wanted": 0.37297896166050853,
+        "avg_n_long": 45.782042494859496,
+        "avg_n_short": 47.603838245373545
+      },
+      "sensitivity": {
+        "aum=1e+07|cost_x0.0": {
+          "net_sharpe": 0.3025536684779476,
+          "net_cagr": 0.024053690439377995,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.0013343514644787234,
+          "max_participation_wanted": 0.03829594718614322
+        },
+        "aum=1e+07|cost_x0.5": {
+          "net_sharpe": 0.1876846825741633,
+          "net_cagr": 0.013196563884037449,
+          "annual_cost": 0.010657934686353438,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.0012980565930432425,
+          "max_participation_wanted": 0.03789453794335423
+        },
+        "aum=1e+07|cost_x1.0": {
+          "net_sharpe": 0.0732460668557553,
+          "net_cagr": 0.002491452342880951,
+          "annual_cost": 0.021277517059022602,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.0012631897324057975,
+          "max_participation_wanted": 0.03749752177906861
+        },
+        "aum=1e+07|cost_x2.0": {
+          "net_sharpe": -0.15422247285802182,
+          "net_cagr": -0.018477061363089575,
+          "annual_cost": 0.042406605643198696,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.0011974677997458648,
+          "max_participation_wanted": 0.03671646459259001
+        },
+        "aum=1e+07|cost_x4.0": {
+          "net_sharpe": -0.6027404150699485,
+          "net_cagr": -0.05874013382497112,
+          "annual_cost": 0.08425673050453668,
+          "avg_clipped": 0.0,
+          "avg_participation": 0.001080371071044791,
+          "max_participation_wanted": 0.03520485787934812
+        },
+        "aum=1e+08|cost_x0.0": {
+          "net_sharpe": 0.28434121102316307,
+          "net_cagr": 0.022310299571297376,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.006743003780568891,
+          "avg_participation": 0.012360055431951376,
+          "max_participation_wanted": 0.38297413256321683
+        },
+        "aum=1e+08|cost_x0.5": {
+          "net_sharpe": 0.14146901946870294,
+          "net_cagr": 0.008857078215785075,
+          "annual_cost": 0.01337573841371895,
+          "avg_clipped": 0.006260154259094622,
+          "avg_participation": 0.011969763861281407,
+          "max_participation_wanted": 0.3779424268820953
+        },
+        "aum=1e+08|cost_x1.0": {
+          "net_sharpe": -0.0003301016512053832,
+          "net_cagr": -0.004330051174124994,
+          "annual_cost": 0.02661423224854799,
+          "avg_clipped": 0.005860267081535413,
+          "avg_participation": 0.011591785522267183,
+          "max_participation_wanted": 0.37297896166050853
+        },
+        "aum=1e+08|cost_x2.0": {
+          "net_sharpe": -0.27841844445239317,
+          "net_cagr": -0.029752269868624892,
+          "annual_cost": 0.05269778544153464,
+          "avg_clipped": 0.005202646038677906,
+          "avg_participation": 0.010883865624559392,
+          "max_participation_wanted": 0.36326913855537024
+        },
+        "aum=1e+08|cost_x4.0": {
+          "net_sharpe": -0.8161163674464572,
+          "net_cagr": -0.07749848396487868,
+          "annual_cost": 0.10342632894605538,
+          "avg_clipped": 0.004217339197558206,
+          "avg_participation": 0.00964793736694284,
+          "max_participation_wanted": 0.3446938384280864
+        },
+        "aum=1e+09|cost_x0.0": {
+          "net_sharpe": 0.2639301549562055,
+          "net_cagr": 0.01960411372174531,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.4098944378671058,
+          "avg_participation": 0.03731669014440919,
+          "max_participation_wanted": 4.953799038507573
+        },
+        "aum=1e+09|cost_x0.5": {
+          "net_sharpe": 0.11525519905350368,
+          "net_cagr": 0.0063039695572535415,
+          "annual_cost": 0.01417245015363406,
+          "avg_clipped": 0.39837770437261527,
+          "avg_participation": 0.037020991816877645,
+          "max_participation_wanted": 4.884597734111276
+        },
+        "aum=1e+09|cost_x1.0": {
+          "net_sharpe": -0.03617930372301475,
+          "net_cagr": -0.0071350820912855495,
+          "annual_cost": 0.028497000003283708,
+          "avg_clipped": 0.38673591977186206,
+          "avg_participation": 0.0366932381382068,
+          "max_participation_wanted": 4.816288262209707
+        },
+        "aum=1e+09|cost_x2.0": {
+          "net_sharpe": -0.34870098992151205,
+          "net_cagr": -0.03455964702325898,
+          "annual_cost": 0.05751458124075096,
+          "avg_clipped": 0.3632121056824735,
+          "avg_participation": 0.035982527761911215,
+          "max_participation_wanted": 4.68142728534295
+        },
+        "aum=1e+09|cost_x4.0": {
+          "net_sharpe": -0.9854171371515017,
+          "net_cagr": -0.08942169985698512,
+          "annual_cost": 0.11658932953689895,
+          "avg_clipped": 0.316929793878778,
+          "avg_participation": 0.03438858162903581,
+          "max_participation_wanted": 4.420091314528612
+        },
+        "aum=1e+10|cost_x0.0": {
+          "net_sharpe": -0.2644806986048771,
+          "net_cagr": -0.026974210413171495,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.8563277199993192,
+          "avg_participation": 0.0457704891150246,
+          "max_participation_wanted": 47.08813208395704
+        },
+        "aum=1e+10|cost_x0.5": {
+          "net_sharpe": -0.33725097010899613,
+          "net_cagr": -0.03327870475595174,
+          "annual_cost": 0.006684572352694683,
+          "avg_clipped": 0.8541718330956488,
+          "avg_participation": 0.04573571642241662,
+          "max_participation_wanted": 46.829573577011686
+        },
+        "aum=1e+10|cost_x1.0": {
+          "net_sharpe": -0.4101475937363773,
+          "net_cagr": -0.0395714343505591,
+          "annual_cost": 0.013488068636269836,
+          "avg_clipped": 0.8519820408591511,
+          "avg_participation": 0.04570086928262439,
+          "max_participation_wanted": 46.57173949775823
+        },
+        "aum=1e+10|cost_x2.0": {
+          "net_sharpe": -0.5613549460679784,
+          "net_cagr": -0.05255014303385763,
+          "annual_cost": 0.027461332032964372,
+          "avg_clipped": 0.847391986595114,
+          "avg_participation": 0.045625594569074696,
+          "max_participation_wanted": 46.05856123610721
+        },
+        "aum=1e+10|cost_x4.0": {
+          "net_sharpe": -0.8768028474295038,
+          "net_cagr": -0.07935852048794556,
+          "annual_cost": 0.05698260279178726,
+          "avg_clipped": 0.8373387167629115,
+          "avg_participation": 0.04545690954892263,
+          "max_participation_wanted": 45.0413356021493
+        }
+      }
+    },
+    "universe_ew": {
+      "gross": {
+        "days": 1459,
+        "total_return": 0.959415729866546,
+        "cagr": 0.12319822636490052,
+        "ann_vol": 0.16073017604085313,
+        "sharpe": 0.8033318556150331,
+        "sortino": 1.1024669299941285,
+        "max_drawdown": -0.22513517754650236,
+        "hit_rate": 0.5236463331048663,
+        "skew": -0.06763557772982534,
+        "kurtosis": 8.398907948780902
+      },
+      "net": {
+        "days": 1459,
+        "total_return": 0.9533086063147558,
+        "cagr": 0.12259278458817024,
+        "ann_vol": 0.16072704576933905,
+        "sharpe": 0.7999883209594468,
+        "sortino": 1.0979001325204043,
+        "max_drawdown": -0.2254205151115043,
+        "hit_rate": 0.5236463331048663,
+        "skew": -0.06754023466952665,
+        "kurtosis": 8.39885749381672
+      },
+      "turnover": {
+        "rebalances": 291,
+        "avg_turnover_per_rebalance": 0.032624921483019445,
+        "annual_turnover": 1.6397880344021811,
+        "avg_clipped_frac": 8.822464351139333e-05,
+        "max_clipped_frac": 0.011259509532174694,
+        "annual_cost": 0.0005391638610072977,
+        "annual_cost_breakdown": {
+          "commission": 8.198940172010907e-05,
+          "spread": 0.00024596820516032715,
+          "slippage": 0.00016397880344021814,
+          "impact": 4.722745068664343e-05,
+          "borrow": 0.0
+        },
+        "avg_participation": 0.00022689223329872628,
+        "max_participation": 0.05000000000000002,
+        "max_participation_wanted": 0.057941865602153315,
+        "avg_n_long": 482.26662097326937,
+        "avg_n_short": 0.0
+      },
+      "sensitivity": {
+        "aum=1e+07|cost_x0.0": {
+          "net_sharpe": 0.8033753933134106,
+          "net_cagr": 0.12320566696203139,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.0,
+          "avg_participation": 2.3586506997746124e-05,
+          "max_participation_wanted": 0.005803248910219134
+        },
+        "aum=1e+07|cost_x0.5": {
+          "net_sharpe": 0.8018034147618064,
+          "net_cagr": 0.12292101941692302,
+          "annual_cost": 0.00025345350799014214,
+          "avg_clipped": 0.0,
+          "avg_participation": 2.357024578152594e-05,
+          "max_participation_wanted": 0.005799041692526396
+        },
+        "aum=1e+07|cost_x1.0": {
+          "net_sharpe": 0.8002312647422006,
+          "net_cagr": 0.12263644240773375,
+          "annual_cost": 0.0005069027374835641,
+          "avg_clipped": 0.0,
+          "avg_participation": 2.3553997426258608e-05,
+          "max_participation_wanted": 0.005794837387702227
+        },
+        "aum=1e+07|cost_x2.0": {
+          "net_sharpe": 0.7970864542178031,
+          "net_cagr": 0.12206749990860222,
+          "annual_cost": 0.0010137883732096716,
+          "avg_clipped": 0.0,
+          "avg_participation": 2.3521539251826976e-05,
+          "max_participation_wanted": 0.005786437508770874
+        },
+        "aum=1e+07|cost_x4.0": {
+          "net_sharpe": 0.7907948186817818,
+          "net_cagr": 0.12093046036836008,
+          "annual_cost": 0.002027508437096626,
+          "avg_clipped": 0.0,
+          "avg_participation": 2.3456776720758827e-05,
+          "max_participation_wanted": 0.005769672618628462
+        },
+        "aum=1e+08|cost_x0.0": {
+          "net_sharpe": 0.8033314115418496,
+          "net_cagr": 0.1231981520168377,
+          "annual_cost": 0.0,
+          "avg_clipped": 8.951335796757256e-05,
+          "avg_participation": 0.00022711524728692267,
+          "max_participation_wanted": 0.05803244863962487
+        },
+        "aum=1e+08|cost_x0.5": {
+          "net_sharpe": 0.8016599542629214,
+          "net_cagr": 0.12289542395380493,
+          "annual_cost": 0.00026958889253964025,
+          "avg_clipped": 8.886923066867012e-05,
+          "avg_participation": 0.00022700364905679405,
+          "max_participation_wanted": 0.057987140099039124
+        },
+        "aum=1e+08|cost_x1.0": {
+          "net_sharpe": 0.7999883209594468,
+          "net_cagr": 0.12259278458817024,
+          "annual_cost": 0.0005391638610072977,
+          "avg_clipped": 8.822464351139333e-05,
+          "avg_participation": 0.00022689223329872628,
+          "max_participation_wanted": 0.057941865602153315
+        },
+        "aum=1e+08|cost_x2.0": {
+          "net_sharpe": 0.796644531695778,
+          "net_cagr": 0.12198777176969666,
+          "annual_cost": 0.0010782720778118155,
+          "avg_clipped": 8.693408814750528e-05,
+          "avg_participation": 0.0002266699487239219,
+          "max_participation_wanted": 0.05785141863530758
+        },
+        "aum=1e+08|cost_x4.0": {
+          "net_sharpe": 0.7899549004906915,
+          "net_cagr": 0.12077880852964307,
+          "annual_cost": 0.0021563219954344585,
+          "avg_clipped": 8.43474428828931e-05,
+          "avg_participation": 0.0002262275640270894,
+          "max_participation_wanted": 0.05767093208115998
+        },
+        "aum=1e+09|cost_x0.0": {
+          "net_sharpe": 0.8033432928702107,
+          "net_cagr": 0.1231971359485684,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.0037240912522158334,
+          "avg_participation": 0.0014022096074778052,
+          "max_participation_wanted": 0.5803606551783332
+        },
+        "aum=1e+09|cost_x0.5": {
+          "net_sharpe": 0.801374618555192,
+          "net_cagr": 0.12284042654724359,
+          "annual_cost": 0.0003174709420708654,
+          "avg_clipped": 0.003721233773332555,
+          "avg_participation": 0.0014009883426989848,
+          "max_participation_wanted": 0.5798127802638362
+        },
+        "aum=1e+09|cost_x1.0": {
+          "net_sharpe": 0.7994057504969048,
+          "net_cagr": 0.12248387145699935,
+          "annual_cost": 0.0006348898736504766,
+          "avg_clipped": 0.003718373485674786,
+          "avg_participation": 0.0013997691351006621,
+          "max_participation_wanted": 0.579265413881209
+        },
+        "aum=1e+09|cost_x2.0": {
+          "net_sharpe": 0.7954674452181701,
+          "net_cagr": 0.12177122358093406,
+          "annual_cost": 0.0012695719701450994,
+          "avg_clipped": 0.0037126444708959387,
+          "avg_participation": 0.0013973368827175973,
+          "max_participation_wanted": 0.5781722046461546
+        },
+        "aum=1e+09|cost_x4.0": {
+          "net_sharpe": 0.7875886425686938,
+          "net_cagr": 0.12034777265258656,
+          "annual_cost": 0.002538314949933932,
+          "avg_clipped": 0.0037011525912318687,
+          "avg_participation": 0.0013924969684021647,
+          "max_participation_wanted": 0.5759918658672589
+        },
+        "aum=1e+10|cost_x0.0": {
+          "net_sharpe": 0.8007744445703454,
+          "net_cagr": 0.12254657274324265,
+          "annual_cost": 0.0,
+          "avg_clipped": 0.07378825229198759,
+          "avg_participation": 0.008639538662414162,
+          "max_participation_wanted": 6.1230974272225875
+        },
+        "aum=1e+10|cost_x0.5": {
+          "net_sharpe": 0.7982188433019038,
+          "net_cagr": 0.12208489899416519,
+          "annual_cost": 0.000411768821332322,
+          "avg_clipped": 0.07370293092860802,
+          "avg_participation": 0.008631896348904884,
+          "max_participation_wanted": 6.117590277990751
+        },
+        "aum=1e+10|cost_x1.0": {
+          "net_sharpe": 0.7956636961751552,
+          "net_cagr": 0.1216235544689439,
+          "annual_cost": 0.0008234021832998732,
+          "avg_clipped": 0.07361767719306891,
+          "avg_participation": 0.008624277751489799,
+          "max_participation_wanted": 6.112088215498404
+        },
+        "aum=1e+10|cost_x2.0": {
+          "net_sharpe": 0.7905557740354708,
+          "net_cagr": 0.12070203341703367,
+          "annual_cost": 0.0016462640050798152,
+          "avg_clipped": 0.07344774307114695,
+          "avg_participation": 0.008609072076576033,
+          "max_participation_wanted": 6.101099446312444
+        },
+        "aum=1e+10|cost_x4.0": {
+          "net_sharpe": 0.780346571153604,
+          "net_cagr": 0.11886311493069579,
+          "annual_cost": 0.0032903791555265742,
+          "avg_clipped": 0.07310892874614378,
+          "avg_participation": 0.00857885055538893,
+          "max_participation_wanted": 6.079182116059282
+        }
+      }
+    },
+    "SPY": {
+      "gross": {
+        "days": 1459,
+        "total_return": 1.1388092041015625,
+        "cagr": 0.14032244682312012,
+        "ann_vol": 0.1670410119497897,
+        "sharpe": 0.8697895000553404,
+        "sortino": 1.154329139870242,
+        "max_drawdown": -0.26285797357559204,
+        "hit_rate": 0.5476353666895134,
+        "skew": -0.05174453929066658,
+        "kurtosis": 9.495783805847168
+      },
+      "net": {
+        "days": 1459,
+        "total_return": 1.1388092041015625,
+        "cagr": 0.14032244682312012,
+        "ann_vol": 0.1670410119497897,
+        "sharpe": 0.8697895000553404,
+        "sortino": 1.154329139870242,
+        "max_drawdown": -0.26285797357559204,
+        "hit_rate": 0.5476353666895134,
+        "skew": -0.05174453929066658,
+        "kurtosis": 9.495783805847168
+      },
+      "turnover": null
+    }
+  },
+  "primary": "topk50_ew",
+  "elapsed_sec": 824.2
+}

@@ -166,6 +166,14 @@ def build(data: str, signals: list) -> dict:
           "ff_snapshot_hash": hash_dir(market.store_dir(data) / "ff"), "ff_last_date": f"{ff.index[-1]:%Y-%m-%d}",
           "coverage": quality["tables"].get("universe_coverage"), "quality_summary": {k: quality[k] for k in ("period", "symbols", "cleaning_stats")}}
 
+    # DSR 기준은 모든 신호에 공통: (신호 시도들의 표준 Sharpe) + (보고하는 모든 포트폴리오의 비용 후 Sharpe)
+    port_sr = []
+    for sig in signals:
+        pdir = market.store_dir(data) / "experiments" / sig / "portfolio"
+        for fp in sorted(pdir.glob("*.pkl")):
+            if not fp.stem.endswith("_weights") and fp.stem not in ("benchmark_spy", "universe_ew"):
+                d = pd.read_pickle(fp)["net"]
+                port_sr.append(float(d.mean() / d.std(ddof=1)))
     first = None
     for sig in signals:
         p4 = json.loads((rep / "phase4" / data / sig / "summary.json").read_text(encoding="utf-8"))
@@ -176,7 +184,6 @@ def build(data: str, signals: list) -> dict:
             first = (sig, daily, spy)
             ts = trial_sharpes(data, panels, daily[PRIMARY].index)
             R_["trial_sharpes_ls_zero_cost_ann"] = {k: v * np.sqrt(ANN) for k, v in ts.items()}
-        port_sr = [d["net"].mean() / d["net"].std(ddof=1) for n, d in daily.items() if n != "universe_ew"]
         all_sr = list(ts.values()) + port_sr
         n_trials = R_["trials"]["total"]
         S = {}

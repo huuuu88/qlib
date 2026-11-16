@@ -31,7 +31,9 @@ def verify_qlib(qlib_dir, cleaned: pd.DataFrame, universe: str, expected_instrum
     dv_err = float((dv_q / dv_src - 1).abs().max())
     # qlib 수익률 vs adjclose 수익률
     m = m.sort_values(["qsym", "date"])
-    adj_ret = m.groupby("qsym")["adjclose"].transform(lambda s: s.ffill() / s.ffill().shift(1) - 1)
+    # qlib normalize 는 거래량 0 인 날의 가격을 NaN 으로 만든다. 같은 기준으로 맞춰야 직전 '거래일' 대비 수익률이 된다
+    m["adj_traded"] = m["adjclose"].where(m["volume_src"] > 0)
+    adj_ret = m.groupby("qsym")["adj_traded"].transform(lambda s: s.ffill() / s.ffill().shift(1) - 1)
     q_ret = m.groupby("qsym")["close_q"].transform(lambda s: s.ffill() / s.ffill().shift(1) - 1)
     ret_err = float((adj_ret - q_ret)[ok].abs().max())
     trad_mismatch = int((m.loc[ok, "tradable_q"].fillna(-1) != m.loc[ok, "tradable_src"].fillna(-1)).sum())

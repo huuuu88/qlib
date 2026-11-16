@@ -1,0 +1,1932 @@
+{
+  "data": "sp500",
+  "signals": {
+    "alpha158_lgb": {
+      "period": [
+        "2021-01-25",
+        "2026-11-12"
+      ],
+      "cost_model": {
+        "commission_bps": 0.5,
+        "half_spread_bps": 1.5,
+        "slippage_bps": 1.0,
+        "impact_coef": 0.1,
+        "borrow_bps_per_year": 50.0,
+        "max_participation": 0.05
+      },
+      "base_aum": 100000000.0,
+      "strategies": {
+        "topk50_ew": {
+          "gross": {
+            "days": 1459,
+            "total_return": 1.2291025006467047,
+            "cagr": 0.14849572514851261,
+            "ann_vol": 0.21482866424317615,
+            "sharpe": 0.7518908376969841,
+            "sortino": 1.085490602778033,
+            "max_drawdown": -0.27209872705048177,
+            "hit_rate": 0.5318711446196025,
+            "skew": 0.11164276480915972,
+            "kurtosis": 7.570156661861844
+          },
+          "net": {
+            "days": 1459,
+            "total_return": 0.8163920420445274,
+            "cagr": 0.10858998413425414,
+            "ann_vol": 0.21485080449319413,
+            "sharpe": 0.5871726981842817,
+            "sortino": 0.8481391112326934,
+            "max_drawdown": -0.2939567937631158,
+            "hit_rate": 0.5291295407813571,
+            "skew": 0.11191880448283176,
+            "kurtosis": 7.544333867570676
+          },
+          "turnover": {
+            "rebalances": 291,
+            "avg_turnover_per_rebalance": 1.3585092446431486,
+            "annual_turnover": 68.28115142438065,
+            "avg_clipped_frac": 0.0023577837013240405,
+            "max_clipped_frac": 0.026842390093508306,
+            "annual_cost": 0.035351207785649416,
+            "annual_cost_breakdown": {
+              "commission": 0.003414057571219033,
+              "spread": 0.0102421727136571,
+              "slippage": 0.006828115142438066,
+              "impact": 0.014866862358335219,
+              "borrow": 0.0
+            },
+            "avg_participation": 0.011798887223813809,
+            "max_participation": 0.05000000000000002,
+            "max_participation_wanted": 0.3803492764532835,
+            "avg_n_long": 50.28444139821796,
+            "avg_n_short": 0.0
+          },
+          "dsr": {
+            "n_trials": 22,
+            "trial_sharpe_std_ann": 0.44842934717617516,
+            "expected_max_sharpe_ann": 0.871003530781022,
+            "psr_vs_zero": 0.921275161459479,
+            "deflated_sharpe": 0.2471888176145478
+          },
+          "ff": {
+            "period": [
+              "2021-01-25",
+              "2026-09-29"
+            ],
+            "n_days": 1427,
+            "excess_of_rf": true,
+            "alpha_ann": -0.00583824168970278,
+            "alpha_tstat": -0.13991671400938302,
+            "betas": {
+              "MKT_RF": 1.0582876480544705,
+              "SMB": 0.2591617928898158,
+              "HML": 0.18009106829834515,
+              "RMW": -0.0471093031211883,
+              "CMA": 0.06383504051553325,
+              "MOM": -0.11472298154590509
+            },
+            "r2": 0.44504606524503887
+          },
+          "vs_spy": {
+            "active_ann": -0.019135993448082037,
+            "tracking_error": 0.10693247327340899,
+            "information_ratio": -0.17895399650164648,
+            "beta": 1.1222752273143066,
+            "correlation": 0.8725402621487918
+          },
+          "regimes": [
+            {
+              "regime": "상승 월 (SPY 월수익률 > 0)",
+              "days": 1014,
+              "ann_return": 0.42173214693871114,
+              "sharpe": 1.970286600573839,
+              "spy_ann_return": 0.41175350546836853,
+              "active_ann": 0.009978656812366588
+            },
+            {
+              "regime": "하락 월 (SPY 월수익률 ≤ 0)",
+              "days": 445,
+              "ann_return": -0.5473639162105375,
+              "sharpe": -2.5960273481663445,
+              "spy_ann_return": -0.4618857800960541,
+              "active_ann": -0.08547814033368857
+            },
+            {
+              "regime": "고변동 (SPY 21일 변동성 > 누적 중앙값)",
+              "days": 622,
+              "ann_return": 0.2363875074308586,
+              "sharpe": 0.8965688661276205,
+              "spy_ann_return": 0.18172892928123474,
+              "active_ann": 0.054658580545308914
+            },
+            {
+              "regime": "저변동",
+              "days": 816,
+              "ann_return": 0.021144310235591556,
+              "sharpe": 0.12488390210406979,
+              "spy_ann_return": 0.11891171336174011,
+              "active_ann": -0.0977673978669152
+            },
+            {
+              "regime": "고금리 (무위험 연 3% 이상)",
+              "days": 835,
+              "ann_return": 0.17322840226516392,
+              "sharpe": 0.8792497400774075,
+              "spy_ann_return": 0.1991807073354721,
+              "active_ann": -0.02595230555214215
+            },
+            {
+              "regime": "저금리 (무위험 연 3% 미만)",
+              "days": 624,
+              "ann_return": 0.06316304229287194,
+              "sharpe": 0.2668184562434109,
+              "spy_ann_return": 0.07317785173654556,
+              "active_ann": -0.010014806578065706
+            }
+          ]
+        },
+        "ls_quintile": {
+          "gross": {
+            "days": 1459,
+            "total_return": 0.4628668558253688,
+            "cagr": 0.06790924240567331,
+            "ann_vol": 0.09323208298435513,
+            "sharpe": 0.7514995187642839,
+            "sortino": 1.0102377740667887,
+            "max_drawdown": -0.15215409176359262,
+            "hit_rate": 0.5263879369431117,
+            "skew": -0.5732324438185931,
+            "kurtosis": 11.98215320254873
+          },
+          "net": {
+            "days": 1459,
+            "total_return": 0.04192430498182653,
+            "cagr": 0.007118750406748475,
+            "ann_vol": 0.09316179344079381,
+            "sharpe": 0.12280743029302851,
+            "sortino": 0.16556241435385646,
+            "max_drawdown": -0.22085378272248057,
+            "hit_rate": 0.5058259081562714,
+            "skew": -0.5940638255968429,
+            "kurtosis": 11.839546366437215
+          },
+          "turnover": {
+            "rebalances": 291,
+            "avg_turnover_per_rebalance": 2.4096311325211137,
+            "annual_turnover": 121.1124538793957,
+            "avg_clipped_frac": 0.0009029619500384559,
+            "max_clipped_frac": 0.009647020259233696,
+            "annual_cost": 0.05857892149249484,
+            "annual_cost_breakdown": {
+              "commission": 0.006055622693969785,
+              "spread": 0.01816686808190936,
+              "slippage": 0.01211124538793957,
+              "impact": 0.017250505506106337,
+              "borrow": 0.004994679822569789
+            },
+            "avg_participation": 0.006525369924206789,
+            "max_participation": 0.05000000000000002,
+            "max_participation_wanted": 0.22792042124841674,
+            "avg_n_long": 96.09321453050035,
+            "avg_n_short": 96.15147361206306
+          },
+          "dsr": {
+            "n_trials": 22,
+            "trial_sharpe_std_ann": 0.44842934717617516,
+            "expected_max_sharpe_ann": 0.871003530781022,
+            "psr_vs_zero": 0.6158864662556336,
+            "deflated_sharpe": 0.03629434227101625
+          },
+          "ff": {
+            "period": [
+              "2021-01-25",
+              "2026-09-29"
+            ],
+            "n_days": 1427,
+            "excess_of_rf": false,
+            "alpha_ann": 0.012145814775152758,
+            "alpha_tstat": 0.3058972072751251,
+            "betas": {
+              "MKT_RF": 0.09672954943045214,
+              "SMB": 0.04799025757079957,
+              "HML": -0.024524013457870305,
+              "RMW": -0.026896104847904168,
+              "CMA": -0.0030532022330367514,
+              "MOM": -0.03405424753135913
+            },
+            "r2": 0.06198627703254456
+          },
+          "vs_spy": null,
+          "regimes": [
+            {
+              "regime": "상승 월 (SPY 월수익률 > 0)",
+              "days": 1014,
+              "ann_return": 0.06063850279921523,
+              "sharpe": 0.6246280398946678,
+              "spy_ann_return": 0.41175350546836853,
+              "active_ann": -0.35111498732712937
+            },
+            {
+              "regime": "하락 월 (SPY 월수익률 ≤ 0)",
+              "days": 445,
+              "ann_return": -0.10066310232828234,
+              "sharpe": -1.209533563478125,
+              "spy_ann_return": -0.4618857800960541,
+              "active_ann": 0.3612226735485665
+            },
+            {
+              "regime": "고변동 (SPY 21일 변동성 > 누적 중앙값)",
+              "days": 622,
+              "ann_return": 0.036471722407108394,
+              "sharpe": 0.36019255871404865,
+              "spy_ann_return": 0.18172892928123474,
+              "active_ann": -0.1452572044784413
+            },
+            {
+              "regime": "저변동",
+              "days": 816,
+              "ann_return": -0.0194812337486717,
+              "sharpe": -0.2246125983458973,
+              "spy_ann_return": 0.11891171336174011,
+              "active_ann": -0.13839294185117845
+            },
+            {
+              "regime": "고금리 (무위험 연 3% 이상)",
+              "days": 835,
+              "ann_return": 0.018199266408281844,
+              "sharpe": 0.22265101775661872,
+              "spy_ann_return": 0.1991807073354721,
+              "active_ann": -0.18098144140902422
+            },
+            {
+              "regime": "저금리 (무위험 연 3% 미만)",
+              "days": 624,
+              "ann_return": 0.0023973939926334367,
+              "sharpe": 0.02248623632310302,
+              "spy_ann_return": 0.07317785173654556,
+              "active_ann": -0.0707804548783042
+            }
+          ]
+        },
+        "opt_long_only": {
+          "gross": {
+            "days": 1459,
+            "total_return": 0.9433540908222735,
+            "cagr": 0.12160255902150574,
+            "ann_vol": 0.13995544537212468,
+            "sharpe": 0.8900728283470248,
+            "sortino": 1.2420259631386448,
+            "max_drawdown": -0.17026621141907472,
+            "hit_rate": 0.5455791638108294,
+            "skew": -0.005336054995937564,
+            "kurtosis": 9.408553027748974
+          },
+          "net": {
+            "days": 1459,
+            "total_return": 0.7975460454771439,
+            "cagr": 0.10659473369804995,
+            "ann_vol": 0.13992264673357308,
+            "sharpe": 0.7939355259929665,
+            "sortino": 1.1090199762900805,
+            "max_drawdown": -0.17894843893479762,
+            "hit_rate": 0.5400959561343386,
+            "skew": -0.0034496635890465307,
+            "kurtosis": 9.398504855690236
+          },
+          "turnover": {
+            "rebalances": 291,
+            "avg_turnover_per_rebalance": 0.5200937725688115,
+            "annual_turnover": 26.140861226878744,
+            "avg_clipped_frac": 0.005503533023579361,
+            "max_clipped_frac": 0.07043098308491036,
+            "annual_cost": 0.01346920310490804,
+            "annual_cost_breakdown": {
+              "commission": 0.0013070430613439372,
+              "spread": 0.003921129184031811,
+              "slippage": 0.0026140861226878745,
+              "impact": 0.005626944736844415,
+              "borrow": 0.0
+            },
+            "avg_participation": 0.013479867079320135,
+            "max_participation": 0.05000000000000002,
+            "max_participation_wanted": 0.5826478831856068,
+            "avg_n_long": 46.589444825222756,
+            "avg_n_short": 0.0
+          },
+          "dsr": {
+            "n_trials": 22,
+            "trial_sharpe_std_ann": 0.44842934717617516,
+            "expected_max_sharpe_ann": 0.871003530781022,
+            "psr_vs_zero": 0.9715797469204247,
+            "deflated_sharpe": 0.42666358752032196
+          },
+          "ff": {
+            "period": [
+              "2021-01-25",
+              "2026-09-29"
+            ],
+            "n_days": 1427,
+            "excess_of_rf": true,
+            "alpha_ann": -0.003227141789898918,
+            "alpha_tstat": -0.09535211133101218,
+            "betas": {
+              "MKT_RF": 0.6760254494396115,
+              "SMB": 0.06717043892959049,
+              "HML": 0.10175430346105327,
+              "RMW": 0.07732062081011937,
+              "CMA": 0.23326011274053982,
+              "MOM": -0.11395787521726257
+            },
+            "r2": 0.3859054987541417
+          },
+          "vs_spy": {
+            "active_ann": -0.03420095989666707,
+            "tracking_error": 0.10136397181220845,
+            "information_ratio": -0.33740745636950126,
+            "beta": 0.6667167939217555,
+            "correlation": 0.795932918544483
+          },
+          "regimes": [
+            {
+              "regime": "상승 월 (SPY 월수익률 > 0)",
+              "days": 1014,
+              "ann_return": 0.31707228832486994,
+              "sharpe": 2.2927145805323756,
+              "spy_ann_return": 0.41175350546836853,
+              "active_ann": -0.09468120180147464
+            },
+            {
+              "regime": "하락 월 (SPY 월수익률 ≤ 0)",
+              "days": 445,
+              "ann_return": -0.35827333062413425,
+              "sharpe": -2.5726141458232594,
+              "spy_ann_return": -0.4618857800960541,
+              "active_ann": 0.10361244525271465
+            },
+            {
+              "regime": "고변동 (SPY 21일 변동성 > 누적 중앙값)",
+              "days": 622,
+              "ann_return": 0.19509016015166586,
+              "sharpe": 1.1286088909403635,
+              "spy_ann_return": 0.18172892928123474,
+              "active_ann": 0.013361233266116193
+            },
+            {
+              "regime": "저변동",
+              "days": 816,
+              "ann_return": 0.05772023535844918,
+              "sharpe": 0.5282739655142306,
+              "spy_ann_return": 0.11891171336174011,
+              "active_ann": -0.06119147274405757
+            },
+            {
+              "regime": "고금리 (무위험 연 3% 이상)",
+              "days": 835,
+              "ann_return": 0.12151318151203919,
+              "sharpe": 0.8874454740710335,
+              "spy_ann_return": 0.1991807073354721,
+              "active_ann": -0.07766752630526687
+            },
+            {
+              "regime": "저금리 (무위험 연 3% 미만)",
+              "days": 624,
+              "ann_return": 0.09714128472936806,
+              "sharpe": 0.674860744952605,
+              "spy_ann_return": 0.07317785173654556,
+              "active_ann": 0.023963435858430412
+            }
+          ]
+        },
+        "opt_ls_neutral": {
+          "gross": {
+            "days": 1459,
+            "total_return": 0.3312769802064284,
+            "cagr": 0.05066380540948545,
+            "ann_vol": 0.08011898946917077,
+            "sharpe": 0.656946836561334,
+            "sortino": 0.987630875662557,
+            "max_drawdown": -0.1699003294424205,
+            "hit_rate": 0.5236463331048663,
+            "skew": -0.005838025791566605,
+            "kurtosis": 5.173195041682327
+          },
+          "net": {
+            "days": 1459,
+            "total_return": 0.10553956445489265,
+            "cagr": 0.01748073884664403,
+            "ann_vol": 0.08015154899154976,
+            "sharpe": 0.2562666520380102,
+            "sortino": 0.3850176773628105,
+            "max_drawdown": -0.19261739898795016,
+            "hit_rate": 0.5140507196710076,
+            "skew": -0.00017893120236060482,
+            "kurtosis": 5.175897303980977
+          },
+          "turnover": {
+            "rebalances": 291,
+            "avg_turnover_per_rebalance": 1.0527101394079381,
+            "annual_turnover": 52.91113087255854,
+            "avg_clipped_frac": 0.0049318622049206945,
+            "max_clipped_frac": 0.05855441490627833,
+            "annual_cost": 0.03208448381949528,
+            "annual_cost_breakdown": {
+              "commission": 0.0026455565436279277,
+              "spread": 0.007936669630883781,
+              "slippage": 0.005291113087255855,
+              "impact": 0.011212476204383924,
+              "borrow": 0.004998668353343791
+            },
+            "avg_participation": 0.010566204398550157,
+            "max_participation": 0.05000000000000002,
+            "max_participation_wanted": 0.3562662999947471,
+            "avg_n_long": 53.49691569568198,
+            "avg_n_short": 56.430431802604524
+          },
+          "dsr": {
+            "n_trials": 22,
+            "trial_sharpe_std_ann": 0.44842934717617516,
+            "expected_max_sharpe_ann": 0.871003530781022,
+            "psr_vs_zero": 0.7311604963617323,
+            "deflated_sharpe": 0.06964303869325324
+          },
+          "ff": {
+            "period": [
+              "2021-01-25",
+              "2026-09-29"
+            ],
+            "n_days": 1427,
+            "excess_of_rf": false,
+            "alpha_ann": 0.023571034626146615,
+            "alpha_tstat": 0.7401745930126101,
+            "betas": {
+              "MKT_RF": 0.016002301207684564,
+              "SMB": 0.0421218768441244,
+              "HML": 0.013243063255124216,
+              "RMW": -0.039683694555413304,
+              "CMA": 0.01059625023453116,
+              "MOM": -0.1214286359549786
+            },
+            "r2": 0.05751701212760396
+          },
+          "vs_spy": null,
+          "regimes": [
+            {
+              "regime": "상승 월 (SPY 월수익률 > 0)",
+              "days": 1014,
+              "ann_return": 0.045615958231490464,
+              "sharpe": 0.5670019495590725,
+              "spy_ann_return": 0.41175350546836853,
+              "active_ann": -0.3661375318948541
+            },
+            {
+              "regime": "하락 월 (SPY 월수익률 ≤ 0)",
+              "days": 445,
+              "ann_return": -0.03659882001547986,
+              "sharpe": -0.4607261614587419,
+              "spy_ann_return": -0.4618857800960541,
+              "active_ann": 0.42528695586136905
+            },
+            {
+              "regime": "고변동 (SPY 21일 변동성 > 누적 중앙값)",
+              "days": 622,
+              "ann_return": 0.013201438641798138,
+              "sharpe": 0.1649319299809152,
+              "spy_ann_return": 0.18172892928123474,
+              "active_ann": -0.16852748824375152
+            },
+            {
+              "regime": "저변동",
+              "days": 816,
+              "ann_return": 0.031625127110028815,
+              "sharpe": 0.3918800505990429,
+              "spy_ann_return": 0.11891171336174011,
+              "active_ann": -0.08728658099247794
+            },
+            {
+              "regime": "고금리 (무위험 연 3% 이상)",
+              "days": 835,
+              "ann_return": 0.033323662799171413,
+              "sharpe": 0.42530598633020356,
+              "spy_ann_return": 0.1991807073354721,
+              "active_ann": -0.16585704501813464
+            },
+            {
+              "regime": "저금리 (무위험 연 3% 미만)",
+              "days": 624,
+              "ann_return": 0.00343405176688247,
+              "sharpe": 0.04160013480398565,
+              "spy_ann_return": 0.07317785173654556,
+              "active_ann": -0.06974379710405516
+            }
+          ]
+        },
+        "universe_ew": {
+          "gross": {
+            "days": 1459,
+            "total_return": 0.959415729866546,
+            "cagr": 0.12319822636490052,
+            "ann_vol": 0.16073017604085313,
+            "sharpe": 0.8033318556150331,
+            "sortino": 1.1024669299941285,
+            "max_drawdown": -0.22513517754650236,
+            "hit_rate": 0.5236463331048663,
+            "skew": -0.06763557772982534,
+            "kurtosis": 8.398907948780902
+          },
+          "net": {
+            "days": 1459,
+            "total_return": 0.9533086063147558,
+            "cagr": 0.12259278458817024,
+            "ann_vol": 0.16072704576933905,
+            "sharpe": 0.7999883209594468,
+            "sortino": 1.0979001325204043,
+            "max_drawdown": -0.2254205151115043,
+            "hit_rate": 0.5236463331048663,
+            "skew": -0.06754023466952665,
+            "kurtosis": 8.39885749381672
+          },
+          "turnover": {
+            "rebalances": 291,
+            "avg_turnover_per_rebalance": 0.032624921483019445,
+            "annual_turnover": 1.6397880344021811,
+            "avg_clipped_frac": 8.822464351139333e-05,
+            "max_clipped_frac": 0.011259509532174694,
+            "annual_cost": 0.0005391638610072977,
+            "annual_cost_breakdown": {
+              "commission": 8.198940172010907e-05,
+              "spread": 0.00024596820516032715,
+              "slippage": 0.00016397880344021814,
+              "impact": 4.722745068664343e-05,
+              "borrow": 0.0
+            },
+            "avg_participation": 0.00022689223329872628,
+            "max_participation": 0.05000000000000002,
+            "max_participation_wanted": 0.057941865602153315,
+            "avg_n_long": 482.26662097326937,
+            "avg_n_short": 0.0
+          },
+          "dsr": {
+            "n_trials": 22,
+            "trial_sharpe_std_ann": 0.44842934717617516,
+            "expected_max_sharpe_ann": 0.871003530781022,
+            "psr_vs_zero": 0.9723496083160416,
+            "deflated_sharpe": 0.43245442846694404
+          },
+          "ff": {
+            "period": [
+              "2021-01-25",
+              "2026-09-29"
+            ],
+            "n_days": 1427,
+            "excess_of_rf": true,
+            "alpha_ann": -0.007984350634682861,
+            "alpha_tstat": -0.3309345667891062,
+            "betas": {
+              "MKT_RF": 0.8677910622391996,
+              "SMB": 0.19043466230997225,
+              "HML": 0.22946302980840116,
+              "RMW": 0.06771396352879189,
+              "CMA": 0.07454127815560538,
+              "MOM": -0.09930176784251468
+            },
+            "r2": 0.4913111866319688
+          },
+          "vs_spy": {
+            "active_ann": -0.016710760551628734,
+            "tracking_error": 0.0695396677679075,
+            "information_ratio": -0.24030544131159534,
+            "beta": 0.8762614775424754,
+            "correlation": 0.9106842819975866
+          },
+          "regimes": [
+            {
+              "regime": "상승 월 (SPY 월수익률 > 0)",
+              "days": 1014,
+              "ann_return": 0.3548375767858108,
+              "sharpe": 2.250348720080572,
+              "spy_ann_return": 0.41175350546836853,
+              "active_ann": -0.05691591334053376
+            },
+            {
+              "regime": "하락 월 (SPY 월수익률 ≤ 0)",
+              "days": 445,
+              "ann_return": -0.3869829972645457,
+              "sharpe": -2.3735042525905,
+              "spy_ann_return": -0.4618857800960541,
+              "active_ann": 0.07490277861230317
+            },
+            {
+              "regime": "고변동 (SPY 21일 변동성 > 누적 중앙값)",
+              "days": 622,
+              "ann_return": 0.1954592857149545,
+              "sharpe": 0.974776777803005,
+              "spy_ann_return": 0.18172892928123474,
+              "active_ann": 0.013730358829404828
+            },
+            {
+              "regime": "저변동",
+              "days": 816,
+              "ann_return": 0.06930605310454768,
+              "sharpe": 0.5642037703772184,
+              "spy_ann_return": 0.11891171336174011,
+              "active_ann": -0.04960565499795907
+            },
+            {
+              "regime": "고금리 (무위험 연 3% 이상)",
+              "days": 835,
+              "ann_return": 0.13293540002869267,
+              "sharpe": 0.8868764358940437,
+              "spy_ann_return": 0.1991807073354721,
+              "active_ann": -0.06624530778861337
+            },
+            {
+              "regime": "저금리 (무위험 연 3% 미만)",
+              "days": 624,
+              "ann_return": 0.12275129816367136,
+              "sharpe": 0.7042589459948702,
+              "spy_ann_return": 0.07317785173654556,
+              "active_ann": 0.049573449292733725
+            }
+          ]
+        },
+        "SPY": {
+          "gross": {
+            "days": 1459,
+            "total_return": 1.1388092041015625,
+            "cagr": 0.14032244682312012,
+            "ann_vol": 0.1670410119497897,
+            "sharpe": 0.8697895000553404,
+            "sortino": 1.154329139870242,
+            "max_drawdown": -0.26285797357559204,
+            "hit_rate": 0.5476353666895134,
+            "skew": -0.05174453929066658,
+            "kurtosis": 9.495783805847168
+          },
+          "net": {
+            "days": 1459,
+            "total_return": 1.1388092041015625,
+            "cagr": 0.14032244682312012,
+            "ann_vol": 0.1670410119497897,
+            "sharpe": 0.8697895000553404,
+            "sortino": 1.154329139870242,
+            "max_drawdown": -0.26285797357559204,
+            "hit_rate": 0.5476353666895134,
+            "skew": -0.05174453929066658,
+            "kurtosis": 9.495783805847168
+          },
+          "turnover": null,
+          "ff": {
+            "period": [
+              "2021-01-25",
+              "2026-09-29"
+            ],
+            "n_days": 1427,
+            "excess_of_rf": true,
+            "alpha_ann": 0.009026197881724986,
+            "alpha_tstat": 0.42335555326466157,
+            "betas": {
+              "MKT_RF": 0.927023845891617,
+              "SMB": -0.0626315136747381,
+              "HML": 0.04695844625046483,
+              "RMW": 0.05757630418487461,
+              "CMA": -0.035555368073355374,
+              "MOM": 0.03566463664452575
+            },
+            "r2": 0.4981702760025095
+          }
+        }
+      },
+      "sensitivity": {
+        "topk50_ew": {
+          "aum=1e+07|cost_x0.0": {
+            "net_sharpe": 0.7422565178349476,
+            "net_cagr": 0.14622546755289045,
+            "annual_cost": 0.0,
+            "avg_clipped": 2.8041855831488945e-06,
+            "avg_participation": 0.001360744113755557,
+            "max_participation_wanted": 0.052664059093603804
+          },
+          "aum=1e+07|cost_x0.5": {
+            "net_sharpe": 0.6830837021015501,
+            "net_cagr": 0.13174154453892517,
+            "annual_cost": 0.012729681757047149,
+            "avg_clipped": 1.0405296138385374e-06,
+            "avg_participation": 0.001314307176337257,
+            "max_participation_wanted": 0.05095648166972149
+          },
+          "aum=1e+07|cost_x1.0": {
+            "net_sharpe": 0.6242678481084568,
+            "net_cagr": 0.1175315115466038,
+            "annual_cost": 0.0253687643275532,
+            "avg_clipped": 0.0,
+            "avg_participation": 0.0012700927085385859,
+            "max_participation_wanted": 0.04930900134108478
+          },
+          "aum=1e+07|cost_x2.0": {
+            "net_sharpe": 0.5076860503806124,
+            "net_cagr": 0.08989533061393984,
+            "annual_cost": 0.05038987833091095,
+            "avg_clipped": 0.0,
+            "avg_participation": 0.001187788211373782,
+            "max_participation_wanted": 0.046185053794104224
+          },
+          "aum=1e+07|cost_x4.0": {
+            "net_sharpe": 0.27887742666023885,
+            "net_cagr": 0.03758421284164948,
+            "annual_cost": 0.0995007895694425,
+            "avg_clipped": 0.0,
+            "avg_participation": 0.0010453433474036733,
+            "max_participation_wanted": 0.040561751641886225
+          },
+          "aum=1e+08|cost_x0.0": {
+            "net_sharpe": 0.7528178166561953,
+            "net_cagr": 0.14869707341769334,
+            "annual_cost": 0.0,
+            "avg_clipped": 0.0028956759876900516,
+            "avg_participation": 0.01293426256473083,
+            "max_participation_wanted": 0.39448994140208926
+          },
+          "aum=1e+08|cost_x0.5": {
+            "net_sharpe": 0.6691458439757416,
+            "net_cagr": 0.1282574465535875,
+            "annual_cost": 0.017858014924377802,
+            "avg_clipped": 0.0025964052912966786,
+            "avg_participation": 0.012347890580415253,
+            "max_participation_wanted": 0.3873485960361594
+          },
+          "aum=1e+08|cost_x1.0": {
+            "net_sharpe": 0.5871726981842817,
+            "net_cagr": 0.10858998413425414,
+            "annual_cost": 0.035351207785649416,
+            "avg_clipped": 0.0023577837013240405,
+            "avg_participation": 0.011798887223813809,
+            "max_participation_wanted": 0.3803492764532835
+          },
+          "aum=1e+08|cost_x2.0": {
+            "net_sharpe": 0.42826791992412694,
+            "net_cagr": 0.07141950199332636,
+            "annual_cost": 0.06932133221390074,
+            "avg_clipped": 0.0019989344796611463,
+            "avg_participation": 0.01080797108869373,
+            "max_participation_wanted": 0.36679616586301894
+          },
+          "aum=1e+08|cost_x4.0": {
+            "net_sharpe": 0.12646582335330775,
+            "net_cagr": 0.004071802063133401,
+            "annual_cost": 0.13370895671135163,
+            "avg_clipped": 0.0015388875227732852,
+            "avg_participation": 0.00917886821156699,
+            "max_participation_wanted": 0.3413344605492283
+          },
+          "aum=1e+09|cost_x0.0": {
+            "net_sharpe": 0.7904972933354648,
+            "net_cagr": 0.13253605108336486,
+            "annual_cost": 0.0,
+            "avg_clipped": 0.3260814799295048,
+            "avg_participation": 0.03996968945146791,
+            "max_participation_wanted": 4.251050732784184
+          },
+          "aum=1e+09|cost_x0.5": {
+            "net_sharpe": 0.7025412837546048,
+            "net_cagr": 0.11591397183720087,
+            "annual_cost": 0.016468527014466213,
+            "avg_clipped": 0.314722466375159,
+            "avg_participation": 0.03970843090863328,
+            "max_participation_wanted": 4.083515279336301
+          },
+          "aum=1e+09|cost_x1.0": {
+            "net_sharpe": 0.6111842134656839,
+            "net_cagr": 0.09856851528996535,
+            "annual_cost": 0.033493647754188026,
+            "avg_clipped": 0.30304091466266525,
+            "avg_participation": 0.03942885355057129,
+            "max_participation_wanted": 3.919250183402484
+          },
+          "aum=1e+09|cost_x2.0": {
+            "net_sharpe": 0.42294316888961925,
+            "net_cagr": 0.06267640913535022,
+            "annual_cost": 0.06918941988346677,
+            "avg_clipped": 0.27915223503209696,
+            "avg_participation": 0.03882135915695693,
+            "max_participation_wanted": 3.6391020650755426
+          },
+          "aum=1e+09|cost_x4.0": {
+            "net_sharpe": 0.028361604390353262,
+            "net_cagr": -0.012498952792382223,
+            "annual_cost": 0.14654196406071035,
+            "avg_clipped": 0.23104615406341697,
+            "avg_participation": 0.0372553044679054,
+            "max_participation_wanted": 3.422469985852983
+          },
+          "aum=1e+10|cost_x0.0": {
+            "net_sharpe": 0.6870318562880399,
+            "net_cagr": 0.047900979235087515,
+            "annual_cost": 0.0,
+            "avg_clipped": 0.8041730793881979,
+            "avg_participation": 0.04460715776922066,
+            "max_participation_wanted": 39.296376806698845
+          },
+          "aum=1e+10|cost_x0.5": {
+            "net_sharpe": 0.6264951573532598,
+            "net_cagr": 0.04360175617481854,
+            "annual_cost": 0.004571585792156554,
+            "avg_clipped": 0.8026159876710048,
+            "avg_participation": 0.04458963695924263,
+            "max_participation_wanted": 39.064233803119485
+          },
+          "aum=1e+10|cost_x1.0": {
+            "net_sharpe": 0.5657217092626172,
+            "net_cagr": 0.03925493676761338,
+            "annual_cost": 0.009221846675172129,
+            "avg_clipped": 0.8010273005762221,
+            "avg_participation": 0.04457118112955122,
+            "max_participation_wanted": 38.83317509206959
+          },
+          "aum=1e+10|cost_x2.0": {
+            "net_sharpe": 0.4433184695438373,
+            "net_cagr": 0.03040087506789968,
+            "annual_cost": 0.01877213327147325,
+            "avg_clipped": 0.7977330043654111,
+            "avg_participation": 0.044538362176333765,
+            "max_participation_wanted": 38.37246750534256
+          },
+          "aum=1e+10|cost_x4.0": {
+            "net_sharpe": 0.1931983926590203,
+            "net_cagr": 0.011840569944335133,
+            "annual_cost": 0.038959274549796266,
+            "avg_clipped": 0.7907009228273496,
+            "avg_participation": 0.04448004136970025,
+            "max_participation_wanted": 37.45493916257706
+          }
+        },
+        "ls_quintile": {
+          "aum=1e+07|cost_x0.0": {
+            "net_sharpe": 0.7430956856948163,
+            "net_cagr": 0.06708510516889299,
+            "annual_cost": 0.0,
+            "avg_clipped": 0.0,
+            "avg_participation": 0.0007786891944209704,
+            "max_participation_wanted": 0.03546532670710586
+          },
+          "aum=1e+07|cost_x0.5": {
+            "net_sharpe": 0.49059523174843533,
+            "net_cagr": 0.04222293092801799,
+            "annual_cost": 0.023570139588496172,
+            "avg_clipped": 0.0,
+            "avg_participation": 0.0007322504589678144,
+            "max_participation_wanted": 0.034398772661639945
+          },
+          "aum=1e+07|cost_x1.0": {
+            "net_sharpe": 0.23942658906250494,
+            "net_cagr": 0.0181193467082974,
+            "annual_cost": 0.04695483943246366,
+            "avg_clipped": 0.0,
+            "avg_participation": 0.0006897170635762057,
+            "max_participation_wanted": 0.033365676409416505
+          },
+          "aum=1e+07|cost_x2.0": {
+            "net_sharpe": -0.25696835462623846,
+            "net_cagr": -0.027964384644654006,
+            "annual_cost": 0.09321974740094027,
+            "avg_clipped": 0.0,
+            "avg_participation": 0.0006148162948067355,
+            "max_participation_wanted": 0.031395435546773154
+          },
+          "aum=1e+07|cost_x4.0": {
+            "net_sharpe": -1.2136824546272005,
+            "net_cagr": -0.11254299633911335,
+            "annual_cost": 0.18403855844758327,
+            "avg_clipped": 0.0,
+            "avg_participation": 0.0004971578909971878,
+            "max_participation_wanted": 0.02780997590140229
+          },
+          "aum=1e+08|cost_x0.0": {
+            "net_sharpe": 0.7576473958594978,
+            "net_cagr": 0.06851216050760112,
+            "annual_cost": 0.0,
+            "avg_clipped": 0.0011553414577204044,
+            "avg_participation": 0.007575589064688938,
+            "max_participation_wanted": 0.2417773517648393
+          },
+          "aum=1e+08|cost_x0.5": {
+            "net_sharpe": 0.43768313299301975,
+            "net_cagr": 0.037083722839008404,
+            "annual_cost": 0.029637846211797863,
+            "avg_clipped": 0.0010237893289557526,
+            "avg_participation": 0.00702045695865652,
+            "max_participation_wanted": 0.23314279243034777
+          },
+          "aum=1e+08|cost_x1.0": {
+            "net_sharpe": 0.12280743029302851,
+            "net_cagr": 0.007118750406748475,
+            "annual_cost": 0.05857892149249484,
+            "avg_clipped": 0.0009029619500384559,
+            "avg_participation": 0.006525369924206789,
+            "max_participation_wanted": 0.22792042124841674
+          },
+          "aum=1e+08|cost_x2.0": {
+            "net_sharpe": -0.47736483826179227,
+            "net_cagr": -0.047885119101035656,
+            "annual_cost": 0.11461319939767244,
+            "avg_clipped": 0.0007474850227022958,
+            "avg_participation": 0.005682246367598612,
+            "max_participation_wanted": 0.2181501701707433
+          },
+          "aum=1e+08|cost_x4.0": {
+            "net_sharpe": -1.5762302238887906,
+            "net_cagr": -0.14391611357070333,
+            "annual_cost": 0.22077418002209925,
+            "avg_clipped": 0.0005359009705310823,
+            "avg_participation": 0.004439723108027629,
+            "max_participation_wanted": 0.19210771627988757
+          },
+          "aum=1e+09|cost_x0.0": {
+            "net_sharpe": 0.7003646698223184,
+            "net_cagr": 0.05815170845601991,
+            "annual_cost": 0.0,
+            "avg_clipped": 0.19767328720688662,
+            "avg_participation": 0.03502817227013561,
+            "max_participation_wanted": 2.422538166227369
+          },
+          "aum=1e+09|cost_x0.5": {
+            "net_sharpe": 0.3174137100845092,
+            "net_cagr": 0.02403809478254826,
+            "annual_cost": 0.034089117004053864,
+            "avg_clipped": 0.17710366735304683,
+            "avg_participation": 0.034058535578006165,
+            "max_participation_wanted": 2.2548176799643995
+          },
+          "aum=1e+09|cost_x1.0": {
+            "net_sharpe": -0.06884536582994782,
+            "net_cagr": -0.00981670228780851,
+            "annual_cost": 0.06904700358565143,
+            "avg_clipped": 0.15805726060988012,
+            "avg_participation": 0.0329798930323999,
+            "max_participation_wanted": 2.097224558945554
+          },
+          "aum=1e+09|cost_x2.0": {
+            "net_sharpe": -0.7950355160617718,
+            "net_cagr": -0.07249677001486099,
+            "annual_cost": 0.1400714920018292,
+            "avg_clipped": 0.12563563240419492,
+            "avg_participation": 0.03063092662655052,
+            "max_participation_wanted": 1.8085387761689096
+          },
+          "aum=1e+09|cost_x4.0": {
+            "net_sharpe": -2.1671599835265045,
+            "net_cagr": -0.18824818623953887,
+            "annual_cost": 0.2774142973229603,
+            "avg_clipped": 0.08113884658931662,
+            "avg_participation": 0.025381588097058316,
+            "max_participation_wanted": 1.4921756083355795
+          },
+          "aum=1e+10|cost_x0.0": {
+            "net_sharpe": 0.7518543364676978,
+            "net_cagr": 0.03764056676273975,
+            "annual_cost": 0.0,
+            "avg_clipped": 0.7551004770401062,
+            "avg_participation": 0.04469030328684895,
+            "max_participation_wanted": 22.934180407639598
+          },
+          "aum=1e+10|cost_x0.5": {
+            "net_sharpe": 0.5237569466943062,
+            "net_cagr": 0.025965970993808485,
+            "annual_cost": 0.011271376197542064,
+            "avg_clipped": 0.7498205068675141,
+            "avg_participation": 0.044664106277700025,
+            "max_participation_wanted": 22.451868921161562
+          },
+          "aum=1e+10|cost_x1.0": {
+            "net_sharpe": 0.2913808793539754,
+            "net_cagr": 0.013932944899183841,
+            "annual_cost": 0.02304360048089574,
+            "avg_clipped": 0.7442927379890978,
+            "avg_participation": 0.04462584026864175,
+            "max_participation_wanted": 21.9729393633934
+          },
+          "aum=1e+10|cost_x2.0": {
+            "net_sharpe": -0.17989980550519358,
+            "net_cagr": -0.011026498863435763,
+            "annual_cost": 0.04825011719903202,
+            "avg_clipped": 0.7323755151504978,
+            "avg_participation": 0.04453458468629765,
+            "max_participation_wanted": 21.163879140315114
+          },
+          "aum=1e+10|cost_x4.0": {
+            "net_sharpe": -1.1796376303922753,
+            "net_cagr": -0.06722030627476339,
+            "annual_cost": 0.10682125114242642,
+            "avg_clipped": 0.7040620776811982,
+            "avg_participation": 0.04433480331331079,
+            "max_participation_wanted": 19.892860011222417
+          }
+        },
+        "opt_long_only": {
+          "aum=1e+07|cost_x0.0": {
+            "net_sharpe": 0.8836702745465781,
+            "net_cagr": 0.12081015444905274,
+            "annual_cost": 0.0,
+            "avg_clipped": 0.0001409744628949918,
+            "avg_participation": 0.0015146404628129282,
+            "max_participation_wanted": 0.08173688440378479
+          },
+          "aum=1e+07|cost_x0.5": {
+            "net_sharpe": 0.8489379348623572,
+            "net_cagr": 0.11535861706265793,
+            "annual_cost": 0.004864724532268586,
+            "avg_clipped": 0.00013484201849169638,
+            "avg_participation": 0.001495452187676505,
+            "max_participation_wanted": 0.08067986574639736
+          },
+          "aum=1e+07|cost_x1.0": {
+            "net_sharpe": 0.8142743391405304,
+            "net_cagr": 0.10994712917170069,
+            "annual_cost": 0.009716644059506816,
+            "avg_clipped": 0.00012863582943233238,
+            "avg_participation": 0.0014766491578995019,
+            "max_participation_wanted": 0.07963769287946112
+          },
+          "aum=1e+07|cost_x2.0": {
+            "net_sharpe": 0.7451558231125422,
+            "net_cagr": 0.09924205175587297,
+            "annual_cost": 0.019382938766449524,
+            "avg_clipped": 0.00011599882557295835,
+            "avg_participation": 0.0014401622762862927,
+            "max_participation_wanted": 0.0775969580463793
+          },
+          "aum=1e+07|cost_x4.0": {
+            "net_sharpe": 0.6077705925121463,
+            "net_cagr": 0.07828840733596643,
+            "annual_cost": 0.03857121020416391,
+            "avg_clipped": 8.980202223412332e-05,
+            "avg_participation": 0.0013714241538527719,
+            "max_participation_wanted": 0.07368367287676296
+          },
+          "aum=1e+08|cost_x0.0": {
+            "net_sharpe": 0.8894539864977069,
+            "net_cagr": 0.12149552134527819,
+            "annual_cost": 0.0,
+            "avg_clipped": 0.006003509363454815,
+            "avg_participation": 0.013935030326048908,
+            "max_participation_wanted": 0.6048073179577284
+          },
+          "aum=1e+08|cost_x0.5": {
+            "net_sharpe": 0.8415489524984839,
+            "net_cagr": 0.11399473159584073,
+            "annual_cost": 0.006759198724948549,
+            "avg_clipped": 0.00574204544427736,
+            "avg_participation": 0.013704981190503212,
+            "max_participation_wanted": 0.593613064620933
+          },
+          "aum=1e+08|cost_x1.0": {
+            "net_sharpe": 0.7939355259929665,
+            "net_cagr": 0.10659473369804995,
+            "annual_cost": 0.01346920310490804,
+            "avg_clipped": 0.005503533023579361,
+            "avg_participation": 0.013479867079320135,
+            "max_participation_wanted": 0.5826478831856068
+          },
+          "aum=1e+08|cost_x2.0": {
+            "net_sharpe": 0.6995949257700086,
+            "net_cagr": 0.09208768891606689,
+            "annual_cost": 0.026745467045842332,
+            "avg_clipped": 0.005059255124096332,
+            "avg_participation": 0.013045601524413527,
+            "max_participation_wanted": 0.5613883602758635
+          },
+          "aum=1e+08|cost_x4.0": {
+            "net_sharpe": 0.5141893727989809,
+            "net_cagr": 0.0641492246441302,
+            "annual_cost": 0.05274487791509584,
+            "avg_clipped": 0.004317745692186903,
+            "avg_participation": 0.012234632656168795,
+            "max_participation_wanted": 0.5214173801925365
+          },
+          "aum=1e+09|cost_x0.0": {
+            "net_sharpe": 0.8625665241396143,
+            "net_cagr": 0.10600530416640819,
+            "annual_cost": 0.0,
+            "avg_clipped": 0.41077190377485057,
+            "avg_participation": 0.03914888559771734,
+            "max_participation_wanted": 6.249150002060733
+          },
+          "aum=1e+09|cost_x0.5": {
+            "net_sharpe": 0.8072327758640413,
+            "net_cagr": 0.09852474065924932,
+            "annual_cost": 0.006784167182416432,
+            "avg_clipped": 0.40542427346238863,
+            "avg_participation": 0.039027270048685,
+            "max_participation_wanted": 6.14240811984769
+          },
+          "aum=1e+09|cost_x1.0": {
+            "net_sharpe": 0.7517245861347996,
+            "net_cagr": 0.091028538379895,
+            "annual_cost": 0.0136351174846297,
+            "avg_clipped": 0.40000806184623755,
+            "avg_participation": 0.038900853688112566,
+            "max_participation_wanted": 6.037347966220428
+          },
+          "aum=1e+09|cost_x2.0": {
+            "net_sharpe": 0.6391846285477473,
+            "net_cagr": 0.07591415979217997,
+            "annual_cost": 0.027528505167088137,
+            "avg_clipped": 0.3891027867503922,
+            "avg_participation": 0.038635769016684085,
+            "max_participation_wanted": 5.830038987780786
+          },
+          "aum=1e+09|cost_x4.0": {
+            "net_sharpe": 0.41249956912429964,
+            "net_cagr": 0.04568029368692095,
+            "annual_cost": 0.056001078794422066,
+            "avg_clipped": 0.36713270338699183,
+            "avg_participation": 0.038061748112689496,
+            "max_participation_wanted": 5.429757032821818
+          },
+          "aum=1e+10|cost_x0.0": {
+            "net_sharpe": 0.8346307213438503,
+            "net_cagr": 0.05681391031834626,
+            "annual_cost": 0.0,
+            "avg_clipped": 0.8483050310411037,
+            "avg_participation": 0.04581461157204495,
+            "max_participation_wanted": 56.29709190962051
+          },
+          "aum=1e+10|cost_x0.5": {
+            "net_sharpe": 0.7980979665196191,
+            "net_cagr": 0.05426305621638172,
+            "annual_cost": 0.002521986849600533,
+            "avg_clipped": 0.8475613529243837,
+            "avg_participation": 0.045802325779428485,
+            "max_participation_wanted": 55.984124861159415
+          },
+          "aum=1e+10|cost_x1.0": {
+            "net_sharpe": 0.7613493156089041,
+            "net_cagr": 0.051690621723753605,
+            "annual_cost": 0.00506460295734885,
+            "avg_clipped": 0.8468088034816228,
+            "avg_participation": 0.04578950601516615,
+            "max_participation_wanted": 55.67182054773946
+          },
+          "aum=1e+10|cost_x2.0": {
+            "net_sharpe": 0.6875667664064008,
+            "net_cagr": 0.0465128111954467,
+            "annual_cost": 0.010212870972383816,
+            "avg_clipped": 0.8452712894425202,
+            "avg_participation": 0.045761712136459035,
+            "max_participation_wanted": 55.050338442489
+          },
+          "aum=1e+10|cost_x4.0": {
+            "net_sharpe": 0.5390681770266726,
+            "net_cagr": 0.03604734567797685,
+            "annual_cost": 0.02076719901354392,
+            "avg_clipped": 0.8421121900174205,
+            "avg_participation": 0.045701896342646875,
+            "max_participation_wanted": 53.817765503394405
+          }
+        },
+        "opt_ls_neutral": {
+          "aum=1e+07|cost_x0.0": {
+            "net_sharpe": 0.6527070621078978,
+            "net_cagr": 0.05042485533777108,
+            "annual_cost": 0.0,
+            "avg_clipped": 9.43953790788335e-06,
+            "avg_participation": 0.001223636725139882,
+            "max_participation_wanted": 0.05754993916187041
+          },
+          "aum=1e+07|cost_x0.5": {
+            "net_sharpe": 0.4996103168252644,
+            "net_cagr": 0.037587861424995817,
+            "annual_cost": 0.012310327978396025,
+            "avg_clipped": 7.318377928306587e-06,
+            "avg_participation": 0.001185198820962548,
+            "max_participation_wanted": 0.05566129793070775
+          },
+          "aum=1e+07|cost_x1.0": {
+            "net_sharpe": 0.34720863778404476,
+            "net_cagr": 0.024971104452516046,
+            "annual_cost": 0.024557198363745526,
+            "avg_clipped": 5.130808375721843e-06,
+            "avg_participation": 0.0011485411807827179,
+            "max_participation_wanted": 0.05383911913325482
+          },
+          "aum=1e+07|cost_x2.0": {
+            "net_sharpe": 0.044803214614572914,
+            "net_cagr": 0.0003718224067534859,
+            "annual_cost": 0.04887041974170036,
+            "avg_clipped": 5.484214676484728e-07,
+            "avg_participation": 0.0010801695053021224,
+            "max_participation_wanted": 0.05038402112928562
+          },
+          "aum=1e+07|cost_x4.0": {
+            "net_sharpe": -0.5491649123360463,
+            "net_cagr": -0.04652003001288363,
+            "annual_cost": 0.09683384164150244,
+            "avg_clipped": 0.0,
+            "avg_participation": 0.0009597019161959066,
+            "max_participation_wanted": 0.044165819442930396
+          },
+          "aum=1e+08|cost_x0.0": {
+            "net_sharpe": 0.6565701429486188,
+            "net_cagr": 0.050622887644462766,
+            "annual_cost": 0.0,
+            "avg_clipped": 0.005792770011442694,
+            "avg_participation": 0.011425931107208555,
+            "max_participation_wanted": 0.3702262544270854
+          },
+          "aum=1e+08|cost_x0.5": {
+            "net_sharpe": 0.4551797454118668,
+            "net_cagr": 0.03381450381438733,
+            "annual_cost": 0.01616052983198598,
+            "avg_clipped": 0.005326727213237922,
+            "avg_participation": 0.01098501810482763,
+            "max_participation_wanted": 0.3631682226372991
+          },
+          "aum=1e+08|cost_x1.0": {
+            "net_sharpe": 0.2562666520380102,
+            "net_cagr": 0.01748073884664403,
+            "annual_cost": 0.03208448381949528,
+            "avg_clipped": 0.0049318622049206945,
+            "avg_participation": 0.010566204398550157,
+            "max_participation_wanted": 0.3562662999947471
+          },
+          "aum=1e+08|cost_x2.0": {
+            "net_sharpe": -0.13288682776860603,
+            "net_cagr": -0.013806437504824687,
+            "annual_cost": 0.06326692695822904,
+            "avg_clipped": 0.00424051039283013,
+            "avg_participation": 0.009801001133285114,
+            "max_participation_wanted": 0.34290100833606646
+          },
+          "aum=1e+08|cost_x4.0": {
+            "net_sharpe": -0.8683681512048851,
+            "net_cagr": -0.07107499989978316,
+            "annual_cost": 0.12322002298159601,
+            "avg_clipped": 0.003363260196515969,
+            "avg_participation": 0.008495116786732815,
+            "max_participation_wanted": 0.3178850163657071
+          },
+          "aum=1e+09|cost_x0.0": {
+            "net_sharpe": 0.4715360461134023,
+            "net_cagr": 0.03256943226161524,
+            "annual_cost": 0.0,
+            "avg_clipped": 0.3720416887689276,
+            "avg_participation": 0.0366454312463751,
+            "max_participation_wanted": 4.231179617183674
+          },
+          "aum=1e+09|cost_x0.5": {
+            "net_sharpe": 0.25104874726216553,
+            "net_cagr": 0.015985711001588188,
+            "annual_cost": 0.018019875509952727,
+            "avg_clipped": 0.35808595689623085,
+            "avg_participation": 0.036299638531408905,
+            "max_participation_wanted": 4.034177945088489
+          },
+          "aum=1e+09|cost_x1.0": {
+            "net_sharpe": 0.02275334096715502,
+            "net_cagr": -0.0010797844388110711,
+            "annual_cost": 0.0362710996654606,
+            "avg_clipped": 0.34382777911322593,
+            "avg_participation": 0.035928649466753296,
+            "max_participation_wanted": 3.841982395432488
+          },
+          "aum=1e+09|cost_x2.0": {
+            "net_sharpe": -0.4270921945818172,
+            "net_cagr": -0.034450493981812436,
+            "annual_cost": 0.07327520557569514,
+            "avg_clipped": 0.316158301485757,
+            "avg_participation": 0.03506280134407103,
+            "max_participation_wanted": 3.4830016689809753
+          },
+          "aum=1e+09|cost_x4.0": {
+            "net_sharpe": -1.3278698412629806,
+            "net_cagr": -0.10025977207189041,
+            "annual_cost": 0.14807003106534675,
+            "avg_clipped": 0.2640348644609147,
+            "avg_participation": 0.03303230271941767,
+            "max_participation_wanted": 3.1325270418331086
+          },
+          "aum=1e+10|cost_x0.0": {
+            "net_sharpe": 0.43534900777179647,
+            "net_cagr": 0.020621807922183377,
+            "annual_cost": 0.0,
+            "avg_clipped": 0.8448495016127525,
+            "avg_participation": 0.04471376970864793,
+            "max_participation_wanted": 50.37954262490579
+          },
+          "aum=1e+10|cost_x0.5": {
+            "net_sharpe": 0.2949028974880554,
+            "net_cagr": 0.013604056563464528,
+            "annual_cost": 0.007383781123593114,
+            "avg_clipped": 0.8425980988133215,
+            "avg_participation": 0.04467405938690624,
+            "max_participation_wanted": 50.00422223399195
+          },
+          "aum=1e+10|cost_x1.0": {
+            "net_sharpe": 0.1487487249598341,
+            "net_cagr": 0.006249642978707115,
+            "annual_cost": 0.01493747792564207,
+            "avg_clipped": 0.8402583002277858,
+            "avg_participation": 0.044632777221783736,
+            "max_participation_wanted": 49.63026187810768
+          },
+          "aum=1e+10|cost_x2.0": {
+            "net_sharpe": -0.15154862785111775,
+            "net_cagr": -0.009019870633169669,
+            "annual_cost": 0.030574322189513274,
+            "avg_clipped": 0.8353298681362564,
+            "avg_participation": 0.044535886881278124,
+            "max_participation_wanted": 48.884021462646054
+          },
+          "aum=1e+10|cost_x4.0": {
+            "net_sharpe": -0.7700670236994649,
+            "net_cagr": -0.04112780258786475,
+            "annual_cost": 0.06420171269023926,
+            "avg_clipped": 0.8242336580399402,
+            "avg_participation": 0.04435755924638548,
+            "max_participation_wanted": 47.40484849750334
+          }
+        }
+      },
+      "monthly_primary_net": {
+        "1": {
+          "2021": -0.0215483297,
+          "2022": -0.1092711116,
+          "2023": 0.0523206148,
+          "2024": 0.0043762616,
+          "2025": 0.0020230335,
+          "2026": 0.0019453776
+        },
+        "2": {
+          "2021": 0.1064900273,
+          "2022": -0.0414638107,
+          "2023": -0.0116504826,
+          "2024": 0.0368345516,
+          "2025": 0.0150576713,
+          "2026": -0.0106985875
+        },
+        "3": {
+          "2021": 0.0492535818,
+          "2022": 0.0102988301,
+          "2023": -0.0041631369,
+          "2024": 0.0345850733,
+          "2025": -0.0070444359,
+          "2026": -0.0234177514
+        },
+        "4": {
+          "2021": 0.0549682817,
+          "2022": -0.0826078929,
+          "2023": -0.0060997069,
+          "2024": -0.0695073596,
+          "2025": 0.0052103735,
+          "2026": 0.0575118461
+        },
+        "5": {
+          "2021": 0.0253565007,
+          "2022": 0.043432,
+          "2023": -0.041629809,
+          "2024": 0.0440484981,
+          "2025": 0.0451363739,
+          "2026": 0.0283858671
+        },
+        "6": {
+          "2021": -0.0226352083,
+          "2022": -0.1132799033,
+          "2023": 0.0895968241,
+          "2024": 0.0045818455,
+          "2025": 0.0598127758,
+          "2026": 0.0062626403
+        },
+        "7": {
+          "2021": -0.024232532,
+          "2022": 0.1242116851,
+          "2023": 0.0342452819,
+          "2024": 0.0291026414,
+          "2025": 0.0128599207,
+          "2026": 0.0593951801
+        },
+        "8": {
+          "2021": 0.0366952218,
+          "2022": -0.0178980219,
+          "2023": -0.034703611,
+          "2024": 0.0195841925,
+          "2025": 0.0450348584,
+          "2026": 0.036763964
+        },
+        "9": {
+          "2021": -0.0650409416,
+          "2022": -0.080553528,
+          "2023": -0.0808240426,
+          "2024": 0.0436975022,
+          "2025": 0.0395997428,
+          "2026": -0.0279282726
+        },
+        "10": {
+          "2021": 0.0424761928,
+          "2022": 0.0789091875,
+          "2023": -0.0854273358,
+          "2024": -0.0193737378,
+          "2025": 0.0245951778,
+          "2026": 0.006844695
+        },
+        "11": {
+          "2021": 0.0022517034,
+          "2022": 0.080997696,
+          "2023": 0.1009143065,
+          "2024": 0.1022396046,
+          "2025": 0.0229749445,
+          "2026": -0.0254404442
+        },
+        "12": {
+          "2021": 0.043108647,
+          "2022": -0.0509010321,
+          "2023": 0.0611287842,
+          "2024": -0.0779753774,
+          "2025": 0.0244803373,
+          "2026": null
+        },
+        "연간": {
+          "2021": 0.2379435591,
+          "2022": -0.1772613558,
+          "2023": 0.0539293263,
+          "2024": 0.1475444879,
+          "2025": 0.3286927639,
+          "2026": 0.1097911544
+        }
+      },
+      "ppo_crosscheck": {
+        "n_dates": 8,
+        "max_abs_weight_diff": 9.88087427526045e-05,
+        "mean_abs_weight_diff": 3.044354840867718e-05
+      },
+      "tearsheet": {
+        "ok": true,
+        "file": "tearsheet_alpha158_lgb_topk50_ew.html"
+      }
+    }
+  },
+  "flags": {
+    "survivorship_bias": true,
+    "pit_membership": false,
+    "includes_delisted": false
+  },
+  "data_hash": {
+    "raw": "eb0da632cf9d46611790b016a35272dd08cac81c25793306cfad913dd4013187",
+    "qlib": "8d3d80297f7615e1e900267d233b5966d752971c1c7781dc2b79aeaefce04f5b",
+    "meta": "cfb5f592168edb95d2ede952fc8319bd48877a4cac4402167d2ba4854976243b"
+  },
+  "git_commit": "4f57e61d8bd6235967d3a2613650df1d9edcc1e9",
+  "selection": {
+    "data": "sp500",
+    "baseline": "alpha158_lgb",
+    "chosen": "factors_equal",
+    "rule_t_required": 2.0,
+    "steps": [
+      {
+        "candidate": "factors_ridge",
+        "incumbent": "factors_equal",
+        "mean_diff": 0.018837278698512993,
+        "t_overlap_adj": 1.1031298387626969,
+        "n_days": 1455,
+        "adopted": false
+      },
+      {
+        "candidate": "alpha158_ridge",
+        "incumbent": "factors_equal",
+        "mean_diff": 0.011258243730672256,
+        "t_overlap_adj": 0.6665706849324587,
+        "n_days": 1455,
+        "adopted": false
+      },
+      {
+        "candidate": "factors_lgb",
+        "incumbent": "factors_equal",
+        "mean_diff": 0.013444984857147669,
+        "t_overlap_adj": 1.0232718705283559,
+        "n_days": 1455,
+        "adopted": false
+      },
+      {
+        "candidate": "alpha158_lgb",
+        "incumbent": "factors_equal",
+        "mean_diff": 0.005118912937532901,
+        "t_overlap_adj": 0.3363123089337217,
+        "n_days": 1455,
+        "adopted": false
+      },
+      {
+        "candidate": "alpha360_lgb",
+        "incumbent": "factors_equal",
+        "mean_diff": 0.0032950269745669163,
+        "t_overlap_adj": 0.2144393612893316,
+        "n_days": 1455,
+        "adopted": false
+      }
+    ],
+    "vs_baseline": {
+      "factors_equal": {
+        "mean_diff": -0.005118912937532901,
+        "t_overlap_adj": -0.3363123089337217,
+        "n_days": 1455
+      },
+      "factors_ridge": {
+        "mean_diff": 0.013718365760980095,
+        "t_overlap_adj": 1.3767473258506662,
+        "n_days": 1455
+      },
+      "alpha158_ridge": {
+        "mean_diff": 0.00613933079313936,
+        "t_overlap_adj": 0.8708633522412991,
+        "n_days": 1455
+      },
+      "factors_lgb": {
+        "mean_diff": 0.008326071919614765,
+        "t_overlap_adj": 1.0956527485947525,
+        "n_days": 1455
+      },
+      "alpha360_lgb": {
+        "mean_diff": -0.0018238859629659836,
+        "t_overlap_adj": -0.3347407796035437,
+        "n_days": 1455
+      }
+    },
+    "trials": {
+      "total": 22,
+      "by_kind": {
+        "model": 8,
+        "portfolio": 4,
+        "factor": 10
+      }
+    },
+    "experiments": {
+      "factors_equal": {
+        "note": "팩터 순위 단순 평균(학습 없음)",
+        "n_features": 10,
+        "ic_mean": -0.007417899066011624,
+        "ic_ir": -0.03641376588673813,
+        "rank_ic_mean": -0.0008335651735710913,
+        "rank_ic_ir": -0.00397789785241048,
+        "rank_ic_tstat_overlap_adj": -0.06194546227223902,
+        "rank_ic_positive_rate": 0.5106529209621993,
+        "n_days": 1455,
+        "fold_rank_ic": [
+          -0.006338296402614735,
+          0.004936586003308564,
+          0.002906107659155354,
+          0.012826899040260846,
+          -0.028040903672325278,
+          0.011497352462832316
+        ]
+      },
+      "factors_ridge": {
+        "note": "커스텀 팩터 선형",
+        "n_features": 10,
+        "ic_mean": 0.0182274550461019,
+        "ic_ir": 0.10901157074693703,
+        "rank_ic_mean": 0.0180037135249419,
+        "rank_ic_ir": 0.10611485192864688,
+        "rank_ic_tstat_overlap_adj": 1.6524641407488614,
+        "rank_ic_positive_rate": 0.5216494845360825,
+        "n_days": 1455,
+        "fold_rank_ic": [
+          -0.0036760533782568394,
+          0.023052258408137613,
+          0.026780312072915934,
+          0.03053087885689258,
+          0.013585337375858177,
+          0.017675253221705142
+        ]
+      },
+      "alpha158_ridge": {
+        "note": "단순 선형",
+        "n_features": 157,
+        "ic_mean": 0.011835782632344785,
+        "ic_ir": 0.08961662405905546,
+        "rank_ic_mean": 0.010424678557101164,
+        "rank_ic_ir": 0.08006743158548145,
+        "rank_ic_tstat_overlap_adj": 1.246842992589171,
+        "rank_ic_positive_rate": 0.5374570446735395,
+        "n_days": 1455,
+        "fold_rank_ic": [
+          0.0028296886194474733,
+          0.0180758821436157,
+          0.01106103474045927,
+          0.010877941186712713,
+          0.011398181955421409,
+          0.007685844522444811
+        ]
+      },
+      "factors_lgb": {
+        "note": "커스텀 팩터 10개",
+        "n_features": 10,
+        "ic_mean": 0.012133907092451294,
+        "ic_ir": 0.1118863151663764,
+        "rank_ic_mean": 0.01261141968357657,
+        "rank_ic_ir": 0.12041407790159199,
+        "rank_ic_tstat_overlap_adj": 1.875137571765332,
+        "rank_ic_positive_rate": 0.5553264604810997,
+        "n_days": 1455,
+        "fold_rank_ic": [
+          -0.007532308380097725,
+          0.03125918786758119,
+          0.005230190335417229,
+          0.01940417880729495,
+          0.020665528494800352,
+          0.004896757969768824
+        ]
+      },
+      "alpha158_lgb": {
+        "note": "기준선",
+        "n_features": 157,
+        "ic_mean": 0.0069755778963849074,
+        "ic_ir": 0.061980009577073024,
+        "rank_ic_mean": 0.0042853477639618045,
+        "rank_ic_ir": 0.042992707540688437,
+        "rank_ic_tstat_overlap_adj": 0.6695001334258256,
+        "rank_ic_positive_rate": 0.5243986254295533,
+        "n_days": 1455,
+        "fold_rank_ic": [
+          -0.0038629800640170076,
+          0.009692639346077236,
+          0.002963101279363123,
+          0.0035997880109914313,
+          0.006579358316566751,
+          0.007457745951492716
+        ]
+      },
+      "alpha360_lgb": {
+        "note": "Alpha360 비교",
+        "n_features": 300,
+        "ic_mean": 0.0055757302840792585,
+        "ic_ir": 0.05333656479606688,
+        "rank_ic_mean": 0.0024614618009958207,
+        "rank_ic_ir": 0.024870799279637614,
+        "rank_ic_tstat_overlap_adj": 0.38729832077604665,
+        "rank_ic_positive_rate": 0.5010309278350515,
+        "n_days": 1455,
+        "fold_rank_ic": [
+          0.000533917304970956,
+          0.006688677268824279,
+          0.00691329205539672,
+          0.003336977024152302,
+          -0.006589192131927972,
+          0.004301239472061624
+        ]
+      }
+    }
+  },
+  "trials": {
+    "total": 22,
+    "by_kind": {
+      "model": 8,
+      "portfolio": 4,
+      "factor": 10
+    }
+  },
+  "ff_snapshot_hash": "a068052e067973bcda157353e4dfce4fe23f4b12498c85f978d7e6b107b51228",
+  "ff_last_date": "2026-09-30",
+  "coverage": [
+    {
+      "year": 2015,
+      "members": 507.3,
+      "members_with_data": 391.9,
+      "coverage": 0.7725
+    },
+    {
+      "year": 2016,
+      "members": 508.0,
+      "members_with_data": 410.4,
+      "coverage": 0.8079
+    },
+    {
+      "year": 2017,
+      "members": 507.5,
+      "members_with_data": 424.8,
+      "coverage": 0.837
+    },
+    {
+      "year": 2018,
+      "members": 506.5,
+      "members_with_data": 434.5,
+      "coverage": 0.8578
+    },
+    {
+      "year": 2019,
+      "members": 506.0,
+      "members_with_data": 446.3,
+      "coverage": 0.882
+    },
+    {
+      "year": 2020,
+      "members": 506.0,
+      "members_with_data": 458.2,
+      "coverage": 0.9055
+    },
+    {
+      "year": 2021,
+      "members": 506.0,
+      "members_with_data": 465.5,
+      "coverage": 0.92
+    },
+    {
+      "year": 2022,
+      "members": 504.7,
+      "members_with_data": 474.4,
+      "coverage": 0.94
+    },
+    {
+      "year": 2023,
+      "members": 504.0,
+      "members_with_data": 482.7,
+      "coverage": 0.9577
+    },
+    {
+      "year": 2024,
+      "members": 504.0,
+      "members_with_data": 486.3,
+      "coverage": 0.9649
+    },
+    {
+      "year": 2025,
+      "members": 504.0,
+      "members_with_data": 492.5,
+      "coverage": 0.9772
+    },
+    {
+      "year": 2026,
+      "members": 503.3,
+      "members_with_data": 499.3,
+      "coverage": 0.9921
+    }
+  ],
+  "quality_summary": {
+    "period": {
+      "start": "2015-01-02",
+      "end": "2026-11-13",
+      "trading_days": 2985
+    },
+    "symbols": {
+      "requested": 752,
+      "obtained": 620,
+      "failed": [
+        "ABMD",
+        "ACE",
+        "ADS",
+        "AET",
+        "AGN",
+        "ALTR",
+        "ALXN",
+        "ANDV",
+        "ANSS",
+        "ARG",
+        "ARNC",
+        "ATVI",
+        "AVP",
+        "BCR",
+        "BHI",
+        "BMS",
+        "BRCM",
+        "BXLT",
+        "CA",
+        "CCE",
+        "CDAY",
+        "CELG",
+        "CERN",
+        "CFN",
+        "CHK",
+        "CMA",
+        "CMCSK",
+        "COL",
+        "COV",
+        "CPGX",
+        "CSC",
+        "CTLT",
+        "CTRA",
+        "CTXS",
+        "CVC",
+        "CXO",
+        "DAY",
+        "DFS",
+        "DISCA",
+        "DISCK",
+        "DISH",
+        "DNB",
+        "DNR",
+        "DO",
+        "DPS",
+        "DRE",
+        "DTV",
+        "DWDP",
+        "ENDP",
+        "ESRX",
+        "ESV",
+        "ETFC",
+        "EVHC",
+        "FBHS",
+        "FDO",
+        "FL",
+        "FLIR",
+        "FRC",
+        "FTR",
+        "GAS",
+        "GGP",
+        "GMCR",
+        "GPS",
+        "HAR",
+        "HBI",
+        "HCBK",
+        "HES",
+        "HFC",
+        "HOLX",
+        "HOT",
+        "HSP",
+        "IPG",
+        "JNPR",
+        "JOY",
+        "JWN",
+        "K",
+        "KRFT",
+        "KSU",
+        "LLL",
+        "LLTC",
+        "LM",
+        "LO",
+        "LVLT",
+        "MJN",
+        "MNK",
+        "MON",
+        "MRO",
+        "MXIM",
+        "NBL",
+        "NLSN",
+        "PBCT",
+        "PCP",
+        "PDCO",
+        "PETM",
+        "PLL",
+        "PXD",
+        "QEP",
+        "RAI",
+        "RHT",
+        "RTN",
+        "SCG",
+        "SEE",
+        "SIAL",
+        "SIVB",
+        "SNI",
+        "SRCL",
+        "STJ",
+        "SWN",
+        "SWY",
+        "TEG",
+        "TFCF",
+        "TFCFA",
+        "TGNA",
+        "TIF",
+        "TSS",
+        "TWC",
+        "TWTR",
+        "TWX",
+        "TYC",
+        "VAR",
+        "VIAB",
+        "WBA",
+        "WCG",
+        "WFM",
+        "WIN",
+        "WLTW",
+        "WYN",
+        "XEC",
+        "XL",
+        "XLNX",
+        "YHOO"
+      ]
+    },
+    "cleaning_stats": {
+      "duplicate_rows_removed": 0,
+      "off_calendar_rows_dropped": 0,
+      "rows": 1731131,
+      "n_invalid_price": 3,
+      "n_halted": 3687,
+      "n_extreme_return": 58,
+      "n_suspected_split": 6,
+      "tradable_fraction": 0.9780860027346284
+    }
+  },
+  "trial_sharpes_ls_zero_cost_ann": {
+    "model:alpha158_lgb": 0.7430956856948162,
+    "model:alpha360_lgb": 0.5170400095619013,
+    "model:alpha158_ridge": 0.7783713335127507,
+    "model:factors_lgb": 0.4712895814529302,
+    "model:factors_ridge": 0.5424020125592364,
+    "model:factors_equal": -0.3023035779925041,
+    "factor:mom_12_1": 0.17258749382854813,
+    "factor:mom_6_1": -0.0826743172555809,
+    "factor:high52w": -0.40425910065669773,
+    "factor:rev_5": 0.6335355658644998,
+    "factor:rev_21": 0.3132037175057999,
+    "factor:lowvol_60": -0.4032465822748398,
+    "factor:lowvol_252": -0.35924678023250595,
+    "factor:maxret_21": -0.489041436715996,
+    "factor:illiq_21": -0.03674766242487512,
+    "factor:dollarvol_60": -0.3418694181549426
+  }
+}

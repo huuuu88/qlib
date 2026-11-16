@@ -1,0 +1,66 @@
+# 기준선: Alpha158(VWAP 제외 157개) + LightGBM — qrun 단일 분할 버전
+#
+#   qrun research/configs/baseline_alpha158_lgb.yaml        (레포 루트에서 실행)
+#
+# 이 파일은 walk-forward 의 마지막 fold(fold 5)와 같은 분할·같은 하이퍼파라미터다.
+# 따라서 여기서 나오는 Rank IC 는 research/reports/phase3/sp500/alpha158_lgb.json 의 fold 5 값과 같아야 한다.
+# 결론은 단일 분할이 아니라 walk-forward(research.pipelines.walk_forward) 결과로 내린다.
+# qlib 내장 백테스트(PortAnaRecord)는 체결 타이밍·비용 모델이 달라 쓰지 않는다 -> research.portfolio.run 사용.
+qlib_init:
+  provider_uri: "research/data/store/sp500/qlib"
+  region: us
+  exp_manager:
+    class: MLflowExpManager
+    module_path: qlib.workflow.expm
+    kwargs:
+      uri: "file:./research/mlruns"
+      default_exp_name: qrun_baseline
+experiment_name: qrun_baseline_alpha158_lgb
+market: &market sp500
+data_handler_config: &data_handler_config
+  start_time: 2015-01-02
+  end_time: 2026-11-13
+  instruments: *market
+  horizon: 5
+  entry: next_open
+task:
+  model:
+    class: LGBModel
+    module_path: qlib.contrib.model.gbdt
+    kwargs:
+      loss: mse
+      colsample_bytree: 0.8879
+      learning_rate: 0.2
+      subsample: 0.8789
+      lambda_l1: 205.6999
+      lambda_l2: 580.9768
+      max_depth: 8
+      num_leaves: 210
+      num_threads: 4
+      seed: 42
+      deterministic: true
+      force_row_wise: true
+      verbosity: -1
+  dataset:
+    class: DatasetH
+    module_path: qlib.data.dataset
+    kwargs:
+      handler:
+        class: USAlpha158
+        module_path: research.pipelines.handlers
+        kwargs: *data_handler_config
+      segments:            # purge 6거래일 포함 (walk-forward fold 5 와 동일)
+        train: [2021-01-05, 2025-01-07]
+        valid: [2025-01-17, 2026-01-20]
+        test: [2026-01-29, 2026-11-05]
+  record:
+    - class: SignalRecord
+      module_path: qlib.workflow.record_temp
+      kwargs:
+        model: <MODEL>
+        dataset: <DATASET>
+    - class: SigAnaRecord
+      module_path: qlib.workflow.record_temp
+      kwargs:
+        ana_long_short: false
+        ann_scaler: 252

@@ -1,0 +1,177 @@
+{
+  "experiment": "factors_lgb",
+  "note": "커스텀 팩터 10개",
+  "data": "sp500",
+  "universe": "sp500",
+  "data_hash": {
+    "raw": "eb0da632cf9d46611790b016a35272dd08cac81c25793306cfad913dd4013187",
+    "qlib": "8d3d80297f7615e1e900267d233b5966d752971c1c7781dc2b79aeaefce04f5b",
+    "meta": "cfb5f592168edb95d2ede952fc8319bd48877a4cac4402167d2ba4854976243b"
+  },
+  "flags": {
+    "survivorship_bias": true,
+    "pit_membership": false,
+    "includes_delisted": false
+  },
+  "git_commit": "4f57e61d8bd6235967d3a2613650df1d9edcc1e9",
+  "git_dirty": true,
+  "seed": 42,
+  "label": {
+    "horizon": 5,
+    "entry": "next_open",
+    "expr": "Ref($open, -6)/Ref($open, -1) - 1",
+    "span": 6
+  },
+  "walk_forward": {
+    "train_days": 1008,
+    "valid_days": 252,
+    "test_days": 252,
+    "step_days": 252,
+    "embargo_days": 0,
+    "start_index": 252,
+    "retrain_every_days": 252,
+    "purge_days": 6,
+    "n_folds": 6
+  },
+  "feature_set": "factors",
+  "n_features": 10,
+  "model": "lgb",
+  "params": {
+    "loss": "mse",
+    "colsample_bytree": 0.8879,
+    "learning_rate": 0.2,
+    "subsample": 0.8789,
+    "lambda_l1": 205.6999,
+    "lambda_l2": 580.9768,
+    "max_depth": 8,
+    "num_leaves": 210,
+    "num_threads": 4,
+    "seed": 42,
+    "deterministic": true,
+    "force_row_wise": true,
+    "verbosity": -1
+  },
+  "test_period": [
+    "2021-01-22",
+    "2026-11-05"
+  ],
+  "metrics": {
+    "ic_mean": 0.012133907092451294,
+    "ic_ir": 0.1118863151663764,
+    "rank_ic_mean": 0.01261141968357657,
+    "rank_ic_ir": 0.12041407790159199,
+    "rank_ic_tstat_overlap_adj": 1.875137571765332,
+    "rank_ic_positive_rate": 0.5553264604810997,
+    "n_days": 1455
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "train": [
+        "2016-01-04",
+        "2020-01-03"
+      ],
+      "valid": [
+        "2020-01-14",
+        "2021-01-12"
+      ],
+      "test": [
+        "2021-01-22",
+        "2022-01-20"
+      ],
+      "n_pred": 117120,
+      "best_iteration": 2,
+      "rank_ic": -0.007532308380097725
+    },
+    {
+      "fold": 1,
+      "train": [
+        "2017-01-03",
+        "2021-01-04"
+      ],
+      "valid": [
+        "2021-01-13",
+        "2022-01-11"
+      ],
+      "test": [
+        "2022-01-21",
+        "2023-01-23"
+      ],
+      "n_pred": 119280,
+      "best_iteration": 1,
+      "rank_ic": 0.03125918786758119
+    },
+    {
+      "fold": 2,
+      "train": [
+        "2018-01-03",
+        "2022-01-03"
+      ],
+      "valid": [
+        "2022-01-12",
+        "2023-01-12"
+      ],
+      "test": [
+        "2023-01-24",
+        "2024-01-24"
+      ],
+      "n_pred": 121259,
+      "best_iteration": 9,
+      "rank_ic": 0.005230190335417229
+    },
+    {
+      "fold": 3,
+      "train": [
+        "2019-01-04",
+        "2023-01-04"
+      ],
+      "valid": [
+        "2023-01-13",
+        "2024-01-16"
+      ],
+      "test": [
+        "2024-01-25",
+        "2025-01-27"
+      ],
+      "n_pred": 122465,
+      "best_iteration": 1,
+      "rank_ic": 0.01940417880729495
+    },
+    {
+      "fold": 4,
+      "train": [
+        "2020-01-06",
+        "2024-01-05"
+      ],
+      "valid": [
+        "2024-01-17",
+        "2025-01-16"
+      ],
+      "test": [
+        "2025-01-28",
+        "2026-01-28"
+      ],
+      "n_pred": 124214,
+      "best_iteration": 1,
+      "rank_ic": 0.020665528494800352
+    },
+    {
+      "fold": 5,
+      "train": [
+        "2021-01-05",
+        "2025-01-07"
+      ],
+      "valid": [
+        "2025-01-17",
+        "2026-01-20"
+      ],
+      "test": [
+        "2026-01-29",
+        "2026-11-05"
+      ],
+      "n_pred": 97326,
+      "best_iteration": 3,
+      "rank_ic": 0.004896757969768824
+    }
+  ]
+}

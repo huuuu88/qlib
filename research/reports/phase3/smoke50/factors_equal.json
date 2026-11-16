@@ -1,0 +1,162 @@
+{
+  "experiment": "factors_equal",
+  "note": "팩터 순위 단순 평균(학습 없음)",
+  "data": "smoke50",
+  "universe": "smoke50",
+  "data_hash": {
+    "raw": "666cb39603bfff45652b3ffa4e275eafd1e3fcdcc7a269b274bb323d3bf8328a",
+    "qlib": "492e3764774ac30d25c20eb520b51fa49cef0e83c86885a2a4b06df83f96bc22"
+  },
+  "flags": {
+    "survivorship_bias": true,
+    "pit_membership": false,
+    "includes_delisted": false
+  },
+  "git_commit": "4f57e61d8bd6235967d3a2613650df1d9edcc1e9",
+  "git_dirty": true,
+  "seed": 42,
+  "label": {
+    "horizon": 5,
+    "entry": "next_open",
+    "expr": "Ref($open, -6)/Ref($open, -1) - 1",
+    "span": 6
+  },
+  "walk_forward": {
+    "train_days": 1008,
+    "valid_days": 252,
+    "test_days": 252,
+    "step_days": 252,
+    "embargo_days": 0,
+    "start_index": 252,
+    "retrain_every_days": 252,
+    "purge_days": 6,
+    "n_folds": 6
+  },
+  "feature_set": "factors",
+  "n_features": 10,
+  "model": "equal",
+  "params": {},
+  "test_period": [
+    "2021-01-22",
+    "2026-11-05"
+  ],
+  "metrics": {
+    "ic_mean": -0.0054375321487164265,
+    "ic_ir": -0.01798844751777508,
+    "rank_ic_mean": 0.004391177707043417,
+    "rank_ic_ir": 0.014458222699538115,
+    "rank_ic_tstat_overlap_adj": 0.22514939347051105,
+    "rank_ic_positive_rate": 0.481786941580756,
+    "n_days": 1455
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "train": [
+        "2016-01-04",
+        "2020-01-03"
+      ],
+      "valid": [
+        "2020-01-14",
+        "2021-01-12"
+      ],
+      "test": [
+        "2021-01-22",
+        "2022-01-20"
+      ],
+      "n_pred": 12600,
+      "best_iteration": null,
+      "rank_ic": 0.0018145516682323494
+    },
+    {
+      "fold": 1,
+      "train": [
+        "2017-01-03",
+        "2021-01-04"
+      ],
+      "valid": [
+        "2021-01-13",
+        "2022-01-11"
+      ],
+      "test": [
+        "2022-01-21",
+        "2023-01-23"
+      ],
+      "n_pred": 12600,
+      "best_iteration": null,
+      "rank_ic": 0.04144955851382059
+    },
+    {
+      "fold": 2,
+      "train": [
+        "2018-01-03",
+        "2022-01-03"
+      ],
+      "valid": [
+        "2022-01-12",
+        "2023-01-12"
+      ],
+      "test": [
+        "2023-01-24",
+        "2024-01-24"
+      ],
+      "n_pred": 12600,
+      "best_iteration": null,
+      "rank_ic": -0.035459743301674895
+    },
+    {
+      "fold": 3,
+      "train": [
+        "2019-01-04",
+        "2023-01-04"
+      ],
+      "valid": [
+        "2023-01-13",
+        "2024-01-16"
+      ],
+      "test": [
+        "2024-01-25",
+        "2025-01-27"
+      ],
+      "n_pred": 12600,
+      "best_iteration": null,
+      "rank_ic": 0.017468779676827598
+    },
+    {
+      "fold": 4,
+      "train": [
+        "2020-01-06",
+        "2024-01-05"
+      ],
+      "valid": [
+        "2024-01-17",
+        "2025-01-16"
+      ],
+      "test": [
+        "2025-01-28",
+        "2026-01-28"
+      ],
+      "n_pred": 12600,
+      "best_iteration": null,
+      "rank_ic": -0.002805567865404924
+    },
+    {
+      "fold": 5,
+      "train": [
+        "2021-01-05",
+        "2025-01-07"
+      ],
+      "valid": [
+        "2025-01-17",
+        "2026-01-20"
+      ],
+      "test": [
+        "2026-01-29",
+        "2026-11-05"
+      ],
+      "n_pred": 9750,
+      "best_iteration": null,
+      "rank_ic": 0.003729916581612277
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "data": "sp500",
+  "baseline": "alpha158_lgb",
+  "chosen": "factors_equal",
+  "rule_t_required": 2.0,
+  "steps": [
+    {
+      "candidate": "factors_ridge",
+      "incumbent": "factors_equal",
+      "mean_diff": 0.018837278698512993,
+      "t_overlap_adj": 1.1031298387626969,
+      "n_days": 1455,
+      "adopted": false
+    },
+    {
+      "candidate": "alpha158_ridge",
+      "incumbent": "factors_equal",
+      "mean_diff": 0.011258243730672256,
+      "t_overlap_adj": 0.6665706849324587,
+      "n_days": 1455,
+      "adopted": false
+    },
+    {
+      "candidate": "factors_lgb",
+      "incumbent": "factors_equal",
+      "mean_diff": 0.013444984857147669,
+      "t_overlap_adj": 1.0232718705283559,
+      "n_days": 1455,
+      "adopted": false
+    },
+    {
+      "candidate": "alpha158_lgb",
+      "incumbent": "factors_equal",
+      "mean_diff": 0.005118912937532901,
+      "t_overlap_adj": 0.3363123089337217,
+      "n_days": 1455,
+      "adopted": false
+    },
+    {
+      "candidate": "alpha360_lgb",
+      "incumbent": "factors_equal",
+      "mean_diff": 0.0032950269745669163,
+      "t_overlap_adj": 0.2144393612893316,
+      "n_days": 1455,
+      "adopted": false
+    }
+  ],
+  "vs_baseline": {
+    "factors_equal": {
+      "mean_diff": -0.005118912937532901,
+      "t_overlap_adj": -0.3363123089337217,
+      "n_days": 1455
+    },
+    "factors_ridge": {
+      "mean_diff": 0.013718365760980095,
+      "t_overlap_adj": 1.3767473258506662,
+      "n_days": 1455
+    },
+    "alpha158_ridge": {
+      "mean_diff": 0.00613933079313936,
+      "t_overlap_adj": 0.8708633522412991,
+      "n_days": 1455
+    },
+    "factors_lgb": {
+      "mean_diff": 0.008326071919614765,
+      "t_overlap_adj": 1.0956527485947525,
+      "n_days": 1455
+    },
+    "alpha360_lgb": {
+      "mean_diff": -0.0018238859629659836,
+      "t_overlap_adj": -0.3347407796035437,
+      "n_days": 1455
+    }
+  },
+  "trials": {
+    "total": 22,
+    "by_kind": {
+      "model": 8,
+      "portfolio": 4,
+      "factor": 10
+    }
+  },
+  "experiments": {
+    "factors_equal": {
+      "note": "팩터 순위 단순 평균(학습 없음)",
+      "n_features": 10,
+      "ic_mean": -0.007417899066011624,
+      "ic_ir": -0.03641376588673813,
+      "rank_ic_mean": -0.0008335651735710913,
+      "rank_ic_ir": -0.00397789785241048,
+      "rank_ic_tstat_overlap_adj": -0.06194546227223902,
+      "rank_ic_positive_rate": 0.5106529209621993,
+      "n_days": 1455,
+      "fold_rank_ic": [
+        -0.006338296402614735,
+        0.004936586003308564,
+        0.002906107659155354,
+        0.012826899040260846,
+        -0.028040903672325278,
+        0.011497352462832316
+      ]
+    },
+    "factors_ridge": {
+      "note": "커스텀 팩터 선형",
+      "n_features": 10,
+      "ic_mean": 0.0182274550461019,
+      "ic_ir": 0.10901157074693703,
+      "rank_ic_mean": 0.0180037135249419,
+      "rank_ic_ir": 0.10611485192864688,
+      "rank_ic_tstat_overlap_adj": 1.6524641407488614,
+      "rank_ic_positive_rate": 0.5216494845360825,
+      "n_days": 1455,
+      "fold_rank_ic": [
+        -0.0036760533782568394,
+        0.023052258408137613,
+        0.026780312072915934,
+        0.03053087885689258,
+        0.013585337375858177,
+        0.017675253221705142
+      ]
+    },
+    "alpha158_ridge": {
+      "note": "단순 선형",
+      "n_features": 157,
+      "ic_mean": 0.011835782632344785,
+      "ic_ir": 0.08961662405905546,
+      "rank_ic_mean": 0.010424678557101164,
+      "rank_ic_ir": 0.08006743158548145,
+      "rank_ic_tstat_overlap_adj": 1.246842992589171,
+      "rank_ic_positive_rate": 0.5374570446735395,
+      "n_days": 1455,
+      "fold_rank_ic": [
+        0.0028296886194474733,
+        0.0180758821436157,
+        0.01106103474045927,
+        0.010877941186712713,
+        0.011398181955421409,
+        0.007685844522444811
+      ]
+    },
+    "factors_lgb": {
+      "note": "커스텀 팩터 10개",
+      "n_features": 10,
+      "ic_mean": 0.012133907092451294,
+      "ic_ir": 0.1118863151663764,
+      "rank_ic_mean": 0.01261141968357657,
+      "rank_ic_ir": 0.12041407790159199,
+      "rank_ic_tstat_overlap_adj": 1.875137571765332,
+      "rank_ic_positive_rate": 0.5553264604810997,
+      "n_days": 1455,
+      "fold_rank_ic": [
+        -0.007532308380097725,
+        0.03125918786758119,
+        0.005230190335417229,
+        0.01940417880729495,
+        0.020665528494800352,
+        0.004896757969768824
+      ]
+    },
+    "alpha158_lgb": {
+      "note": "기준선",
+      "n_features": 157,
+      "ic_mean": 0.0069755778963849074,
+      "ic_ir": 0.061980009577073024,
+      "rank_ic_mean": 0.0042853477639618045,
+      "rank_ic_ir": 0.042992707540688437,
+      "rank_ic_tstat_overlap_adj": 0.6695001334258256,
+      "rank_ic_positive_rate": 0.5243986254295533,
+      "n_days": 1455,
+      "fold_rank_ic": [
+        -0.0038629800640170076,
+        0.009692639346077236,
+        0.002963101279363123,
+        0.0035997880109914313,
+        0.006579358316566751,
+        0.007457745951492716
+      ]
+    },
+    "alpha360_lgb": {
+      "note": "Alpha360 비교",
+      "n_features": 300,
+      "ic_mean": 0.0055757302840792585,
+      "ic_ir": 0.05333656479606688,
+      "rank_ic_mean": 0.0024614618009958207,
+      "rank_ic_ir": 0.024870799279637614,
+      "rank_ic_tstat_overlap_adj": 0.38729832077604665,
+      "rank_ic_positive_rate": 0.5010309278350515,
+      "n_days": 1455,
+      "fold_rank_ic": [
+        0.000533917304970956,
+        0.006688677268824279,
+        0.00691329205539672,
+        0.003336977024152302,
+        -0.006589192131927972,
+        0.004301239472061624
+      ]
+    }
+  }
+}
